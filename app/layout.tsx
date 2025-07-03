@@ -8,9 +8,9 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SDC Management Solutions - Excellence in Business Management',
-  description: 'Leading management consulting firm providing innovative solutions for government outsourcing, project management, and business optimization.',
-  keywords: 'management consulting, government outsourcing, project management, business solutions',
+  title: 'SDC Management Solutions - Empowering Organizations for Sustainable Growth',
+  description: 'SDC Management Solutions provides comprehensive services including government outsourcing, recruitment, construction management, mining, security, and more.',
+  keywords: 'SDC Management Solutions, government outsourcing, recruitment services, construction management, mining services, security services, staffing solutions, business consulting',
 };
 
 export default function RootLayout({

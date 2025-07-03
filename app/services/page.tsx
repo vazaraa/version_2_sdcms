@@ -5,34 +5,13 @@ import Link from 'next/link';
 import { useGSAP } from '@/hooks/useGSAP';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Building2, Users, Award, HardHat, Mountain, Shield, Sparkles, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { services } from '@/data/services';
 
 export default function ServicesPage() {
   const containerRef = useGSAP();
 
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Building2':
-        return Building2;
-      case 'Users':
-        return Users;
-      case 'Award':
-        return Award;
-      case 'HardHat':
-        return HardHat;
-      case 'Mountain':
-        return Mountain;
-      case 'Shield':
-        return Shield;
-      case 'Sparkles':
-        return Sparkles;
-      case 'GraduationCap':
-        return GraduationCap;
-      default:
-        return Building2;
-    }
-  };
+
 
   return (
     <div ref={containerRef} className="min-h-screen">
@@ -58,7 +37,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const Icon = getIcon(service.icon);
+              const Icon = service.icon;
               return (
                 <Card key={service.id} className="scale-in hover:shadow-xl transition-shadow duration-300 h-full">
                   <CardContent className="p-0">

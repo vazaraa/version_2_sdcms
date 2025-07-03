@@ -1,4 +1,4 @@
-import { Target, Users, Building, Truck, Shield, Wrench, GraduationCap, ClipboardList } from 'lucide-react';
+import { Target, Users, Building, Truck, Shield, Wrench, GraduationCap, ClipboardList, Award } from 'lucide-react';
 import constructionBg from '@/public/images/services/construction-bg.webp';
 import miningBg from '@/public/images/services/mining-bg.webp';
 import staffingBg from '@/public/images/services/staffing-bg.webp';
@@ -18,7 +18,7 @@ export interface Service {
   benefits: string[];
   processSteps: string[];
   slug: string;
-  icon: React.ComponentType<{ size?: string | number }>;
+  icon: React.ComponentType<{ className?: string; size?: string | number }>;
   image: string;
   category: string;
 }
@@ -104,8 +104,8 @@ export const services: Service[] = [
       'Ongoing Support and Maintenance'
     ],
     slug: 'details-of-clients-served',
-    icon: 'Award',
-    image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg',
+    icon: Award,
+    image: '/images/services/government-bg.webp',
     category: 'Portfolio'
   },
   {
