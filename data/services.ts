@@ -1,3 +1,14 @@
+import { Target, Users, Building, Truck, Shield, Wrench, GraduationCap, ClipboardList } from 'lucide-react';
+import constructionBg from '@/public/images/services/construction-bg.webp';
+import miningBg from '@/public/images/services/mining-bg.webp';
+import staffingBg from '@/public/images/services/staffing-bg.webp';
+import governmentBg from '@/public/images/services/government-bg.webp';
+import securityBg from '@/public/images/services/security-bg.webp';
+import housekeepingBg from '@/public/images/services/housekeeping-bg.webp';
+import trainingBg from '@/public/images/services/training-bg.webp';
+import surveyBg from '@/public/images/services/survey-bg.webp';
+import type { StaticImageData } from 'next/image';
+
 export interface Service {
   id: string;
   title: string;
@@ -7,7 +18,7 @@ export interface Service {
   benefits: string[];
   processSteps: string[];
   slug: string;
-  icon: string;
+  icon: React.ComponentType<{ size?: string | number }>;
   image: string;
   category: string;
 }
@@ -15,19 +26,10 @@ export interface Service {
 export const services: Service[] = [
   {
     id: '1',
-    title: 'Government and Outsourcing',
-    description: 'Comprehensive government project management and outsourcing solutions with regulatory compliance expertise.',
-    fullDescription: 'Our Government and Outsourcing services provide end-to-end solutions for public sector projects. We specialize in managing complex government initiatives, ensuring regulatory compliance, and delivering efficient outsourcing solutions that meet stringent government standards and requirements.',
-    features: [
-      'Government Project Management',
-      'Regulatory Compliance Consulting',
-      'Public Sector Outsourcing',
-      'Policy Implementation Support',
-      'Documentation and Reporting',
-      'Stakeholder Management',
-      'Quality Assurance Systems',
-      'Risk Management and Mitigation'
-    ],
+    title: 'Government OutSourcing',
+    description: 'Specialized services for government projects and initiatives.',
+    fullDescription: 'Our Government OutSourcing services provide end-to-end solutions for public sector projects. We specialize in managing complex government initiatives, ensuring regulatory compliance, and delivering efficient outsourcing solutions that meet stringent government standards and requirements.',
+    features: ['Project Management', 'Compliance', 'Documentation', 'Reporting'],
     benefits: [
       'Reduced operational costs by 30-40%',
       'Improved compliance and transparency',
@@ -42,26 +44,17 @@ export const services: Service[] = [
       'Monitoring and Quality Control',
       'Reporting and Documentation'
     ],
-    slug: 'government-and-outsourcing',
-    icon: 'Building2',
-    image: 'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg',
+    slug: 'government',
+    icon: Target,
+    image: '/images/services/government-bg.webp',
     category: 'Government'
   },
   {
     id: '2',
     title: 'Recruitment and Staffing Solutions',
-    description: 'End-to-end recruitment and staffing services providing qualified professionals across all industry sectors.',
+    description: 'Professional staffing and recruitment services across various industries.',
     fullDescription: 'Our Recruitment and Staffing Solutions offer comprehensive talent acquisition services, from executive search to bulk hiring. We provide skilled professionals across various industries, ensuring the right fit for your organizational needs and culture.',
-    features: [
-      'Executive Search and Selection',
-      'Bulk Recruitment Services',
-      'Temporary and Contract Staffing',
-      'Permanent Placement Solutions',
-      'Skills Assessment and Testing',
-      'Background Verification',
-      'Onboarding Support',
-      'Talent Pipeline Management'
-    ],
+    features: ['Talent Acquisition', 'HR Management', 'Employee Training', 'Performance Monitoring'],
     benefits: [
       'Access to qualified talent pool',
       'Reduced hiring time by 50%',
@@ -76,9 +69,9 @@ export const services: Service[] = [
       'Background Verification',
       'Final Selection and Onboarding'
     ],
-    slug: 'recruitment-and-staffing-solutions',
-    icon: 'Users',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+    slug: 'staffing',
+    icon: Users,
+    image: '/images/services/staffing-bg.webp',
     category: 'Human Resources'
   },
   {
@@ -117,19 +110,10 @@ export const services: Service[] = [
   },
   {
     id: '4',
-    title: 'Construction',
-    description: 'Complete construction project management and execution services for residential, commercial, and infrastructure projects.',
+    title: 'Construction Management',
+    description: 'Comprehensive construction project management and supervision services.',
     fullDescription: 'Our Construction services encompass the entire project lifecycle from planning to completion. We provide comprehensive construction management, quality control, and project execution services for various types of construction projects.',
-    features: [
-      'Project Planning and Design',
-      'Construction Management',
-      'Quality Control and Assurance',
-      'Safety Management Systems',
-      'Material Procurement',
-      'Vendor Management',
-      'Timeline and Budget Control',
-      'Regulatory Compliance'
-    ],
+    features: ['Project Planning', 'Site Supervision', 'Quality Control', 'Timeline Management'],
     benefits: [
       'On-time project completion',
       'Cost optimization and control',
@@ -145,25 +129,16 @@ export const services: Service[] = [
       'Project Handover'
     ],
     slug: 'construction',
-    icon: 'HardHat',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
+    icon: Building,
+    image: '/images/services/construction-bg.webp',
     category: 'Infrastructure'
   },
   {
     id: '5',
-    title: 'Mining Raw Materials',
-    description: 'Specialized mining operations and raw material extraction services with environmental compliance and safety focus.',
+    title: 'Mining & Raw Materials',
+    description: 'Mining operations and raw material supply services.',
     fullDescription: 'Our Mining Raw Materials services provide comprehensive solutions for mineral extraction, processing, and supply chain management. We ensure sustainable mining practices while maintaining the highest safety and environmental standards.',
-    features: [
-      'Mineral Exploration and Survey',
-      'Mining Operations Management',
-      'Raw Material Processing',
-      'Environmental Compliance',
-      'Safety Management Systems',
-      'Equipment and Machinery Management',
-      'Supply Chain Optimization',
-      'Regulatory Approvals'
-    ],
+    features: ['Quartz Mining', 'Feldspar Supply', 'Granite Mining', 'Quality Control'],
     benefits: [
       'Sustainable mining practices',
       'Environmental compliance assurance',
@@ -178,26 +153,17 @@ export const services: Service[] = [
       'Quality Control and Testing',
       'Transportation and Delivery'
     ],
-    slug: 'mining-raw-materials',
-    icon: 'Mountain',
-    image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg',
+    slug: 'mining',
+    icon: Truck,
+    image: '/images/services/mining-bg.webp',
     category: 'Mining'
   },
   {
     id: '6',
     title: 'Security Services',
-    description: 'Comprehensive security solutions including personnel, technology, and risk management for complete protection.',
+    description: 'Complete security solutions for businesses and organizations.',
     fullDescription: 'Our Security Services provide comprehensive protection solutions combining trained security personnel, advanced technology, and risk management strategies. We ensure complete security coverage for various facilities and events.',
-    features: [
-      'Trained Security Personnel',
-      'Access Control Systems',
-      'CCTV Surveillance',
-      'Risk Assessment and Management',
-      'Emergency Response Planning',
-      'Event Security Management',
-      'Industrial Security Solutions',
-      '24/7 Monitoring Services'
-    ],
+    features: ['Guards & Surveillance', 'Access Control', 'Emergency Response', 'Security Audits'],
     benefits: [
       'Complete security coverage',
       'Trained and certified personnel',
@@ -212,26 +178,17 @@ export const services: Service[] = [
       'Technology Installation',
       'Ongoing Monitoring and Support'
     ],
-    slug: 'security-services',
-    icon: 'Shield',
-    image: 'https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg',
+    slug: 'security',
+    icon: Shield,
+    image: '/images/services/security-bg.webp',
     category: 'Security'
   },
   {
     id: '7',
     title: 'Housekeeping Services',
-    description: 'Professional housekeeping and facility management services ensuring clean, hygienic, and well-maintained environments.',
+    description: 'Professional cleaning and facility maintenance services.',
     fullDescription: 'Our Housekeeping Services provide comprehensive cleaning and facility management solutions for commercial, industrial, and residential properties. We ensure high standards of cleanliness, hygiene, and maintenance.',
-    features: [
-      'Daily Cleaning Services',
-      'Deep Cleaning Solutions',
-      'Facility Management',
-      'Waste Management Systems',
-      'Hygiene and Sanitation',
-      'Equipment and Supply Management',
-      'Quality Control Inspections',
-      'Eco-friendly Cleaning Solutions'
-    ],
+    features: ['Regular Cleaning', 'Deep Cleaning', 'Equipment Maintenance', 'Quality Assurance'],
     benefits: [
       'Maintained clean environments',
       'Improved hygiene standards',
@@ -246,26 +203,17 @@ export const services: Service[] = [
       'Regular Service Delivery',
       'Quality Monitoring and Feedback'
     ],
-    slug: 'housekeeping-services',
-    icon: 'Sparkles',
-    image: 'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg',
+    slug: 'housekeeping',
+    icon: Wrench,
+    image: '/images/services/housekeeping-bg.webp',
     category: 'Facility Management'
   },
   {
     id: '8',
-    title: 'Training and Development',
-    description: 'Comprehensive training programs and professional development services to enhance skills and organizational capabilities.',
+    title: 'Training & Development',
+    description: 'Corporate training and skill development programs.',
     fullDescription: 'Our Training and Development services offer customized learning solutions designed to enhance individual and organizational capabilities. We provide comprehensive training programs across various domains and skill levels.',
-    features: [
-      'Customized Training Programs',
-      'Professional Skill Development',
-      'Leadership Training',
-      'Technical Skills Enhancement',
-      'Soft Skills Development',
-      'Certification Programs',
-      'E-learning Solutions',
-      'Performance Assessment'
-    ],
+    features: ['Skill Assessment', 'Custom Training', 'Certification Programs', 'Performance Tracking'],
     benefits: [
       'Enhanced employee capabilities',
       'Improved productivity and performance',
@@ -280,9 +228,45 @@ export const services: Service[] = [
       'Skills Assessment',
       'Continuous Improvement'
     ],
-    slug: 'training-and-development',
-    icon: 'GraduationCap',
-    image: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg',
+    slug: 'training',
+    icon: GraduationCap,
+    image: '/images/services/training-bg.webp',
     category: 'Education'
+  },
+  {
+    id: '9',
+    title: 'Survey & Research',
+    description: 'Comprehensive survey and market research services.',
+    fullDescription: 'Our Survey and Research services offer comprehensive market research and data collection services to help businesses make informed decisions. We provide insights and analysis to support your strategic planning and market entry strategies.',
+    features: ['Data Collection', 'Market Analysis', 'Report Generation', 'Insights Delivery'],
+    benefits: [
+      'Informed decision-making',
+      'Market insights and analysis',
+      'Strategic planning support',
+      'Data-driven insights',
+      'Customized research solutions'
+    ],
+    processSteps: [
+      'Research Design and Planning',
+      'Data Collection',
+      'Analysis and Insights',
+      'Report Generation',
+      'Insights Delivery'
+    ],
+    slug: 'survey',
+    icon: ClipboardList,
+    image: '/images/services/survey-bg.webp',
+    category: 'Research'
   }
 ];
+
+export const serviceBackgrounds: { [key: string]: StaticImageData } = {
+  'construction': constructionBg,
+  'mining': miningBg,
+  'staffing': staffingBg,
+  'government': governmentBg,
+  'security': securityBg,
+  'housekeeping': housekeepingBg,
+  'training': trainingBg,
+  'survey': surveyBg,
+};

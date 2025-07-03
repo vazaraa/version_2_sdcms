@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Lenis from "@studio-freight/lenis";
 import {
@@ -74,39 +75,15 @@ const CompaniesPreview = () => {
     };
   }, []);
 
-  const divref = useRef<(HTMLDivElement | null)[]>([]);
-  const divContainerRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  let companyDivs = [];
-
-  for (let i = 1; i <= 7; i++) {
-    companyDivs.push(
-      <div
-        className="w-[100vh] shrink-0 rounded-3xl overflow-hidden bg-white m-10"
-        ref={(ref) => (divContainerRef.current[i - 1] = ref)}
-      >
-        <h1 className="w-full ">Company</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, earum
-          eum natus eaque hic velit dicta, rem exercitationem nisi saepe beatae!
-          Nihil vero perferendis facere aliquam sed similique itaque tempore!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, earum
-          eum natus eaque hic velit dicta, rem exercitationem nisi saepe beatae!
-          Nihil vero perferendis facere aliquam sed similique itaque tempore!
-        </p>
-      </div>
-    );
-  }
-
   return (
     <>
       <section
         ref={sectionRef}
         id="sectionPin"
-        className="relative w-full min-h-screen bg-[#111] text-[#b9b3a9]"
+        className="relative w-full min-h-screen bg-background text-foreground"
         style={{ overflow: "hidden" }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 px-8 pt-16 text-[#b9b3a9]">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 px-8 pt-16 text-foreground">
           Our Group Companies
         </h2>
         <div
@@ -119,26 +96,23 @@ const CompaniesPreview = () => {
             return (
               <div
                 key={company.id}
-                className="min-w-[60vw] max-w-[60vw] h-[80vh] bg-[#111] grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl"
+                className="min-w-[90vw] max-w-[60vw] h-[60vh] bg-background dark:bg-[#111] grid grid-cols-1 md:grid-cols-2 gap-4 items-center rounded-xl shadow-lg"
                 style={{ padding: "0 5vw" }}
               >
                 {/* Left: Text */}
                 <div className="flex flex-col justify-center items-start text-left px-0 md:px-8">
                   <h2
-                    className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                    style={{ color: "#b9b3a9" }}
+                    className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-foreground"
                   >
                     {company.name}
                   </h2>
                   <p
-                    className="text-2xl md:text-3xl font-light mb-8"
-                    style={{ color: "#b9b3a9" }}
+                    className="text-2xl md:text-3xl font-light mb-8 text-foreground"
                   >
                     {company.specialization}
                   </p>
                   <p
-                    className="text-xl md:text-2xl font-light mb-8 max-w-2xl"
-                    style={{ color: "#b9b3a9" }}
+                    className="text-xl md:text-2xl font-light mb-8 max-w-2xl text-foreground"
                   >
                     {company.description}
                   </p>
@@ -153,12 +127,12 @@ const CompaniesPreview = () => {
                   </Button>
                 </div>
                 {/* Right: Image */}
-                <div className="flex items-center justify-center h-full w-full relative">
-                  <img
+                  <Image
                     src={company.image}
                     alt={company.name}
-                    className="object-cover w-full h-[80vh] rounded-md shadow-lg"
-                    style={{ background: "#222" }}
+                    className="object-cover w-full h-[60vh] rounded-md shadow-lg bg-muted"
+                    width={800}
+                    height={800}
                   />
                   <div className="absolute top-4 left-4">
                     <div
@@ -173,7 +147,6 @@ const CompaniesPreview = () => {
                     </span>
                   </div>
                 </div>
-              </div>
             );
           })}
         </div>

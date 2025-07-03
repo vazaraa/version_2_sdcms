@@ -6,7 +6,7 @@ import { useGSAP } from '@/hooks/useGSAP';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Building2, Users, Award, Star, Quote } from 'lucide-react';
-import { clients } from '@/data/clients';
+import { clients, governmentClients, privateClients } from '@/data/clients';
 
 export default function ClientsPage() {
   const containerRef = useGSAP();
@@ -110,54 +110,7 @@ export default function ClientsPage() {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                What Our Clients Say
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Hear from our satisfied clients about their experience working with us 
-                and the impact we've made on their business success.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {clients.map((client, index) => (
-              <Card key={client.id} className="scale-in hover:shadow-xl transition-shadow duration-300 h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary"></div>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{client.name}</h3>
-                      <p className="text-sm text-muted-foreground">{client.industry}</p>
-                    </div>
-                  </div>
-                  
-                  {client.testimonial && (
-                    <>
-                      <div className="mb-4">
-                        <Quote className="h-8 w-8 text-primary/20 mb-2" />
-                        <p className="text-muted-foreground italic leading-relaxed">
-                          "{client.testimonial}"
-                        </p>
-                      </div>
-                      <div className="border-t pt-4">
-                        <p className="font-semibold text-foreground text-sm">{client.author}</p>
-                        <p className="text-xs text-muted-foreground">{client.position}</p>
-                      </div>
-                    </>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Removed as per user request */}
 
       {/* Success Stories */}
       <section className="py-20 bg-muted/30">
@@ -174,7 +127,7 @@ export default function ClientsPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-row gap-8 overflow-x-auto pb-4 hide-scrollbar">
             {[
               {
                 title: 'Digital Transformation Success',
@@ -205,7 +158,7 @@ export default function ClientsPage() {
                 image: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg'
               }
             ].map((story, index) => (
-              <Card key={index} className="scale-in hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className="min-w-[340px] max-w-xs flex-shrink-0 scale-in hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-0">
                   <div className="aspect-video relative">
                     <img
@@ -223,7 +176,6 @@ export default function ClientsPage() {
                       </p>
                     </div>
                   </div>
-                  
                   <div className="p-6">
                     <div className="text-center mb-4">
                       <div className="text-2xl font-bold text-primary mb-1">
@@ -239,6 +191,57 @@ export default function ClientsPage() {
                   </div>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+          <style jsx>{`
+            .hide-scrollbar::-webkit-scrollbar {
+              display: none;
+            }
+            .hide-scrollbar {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* Government Clients */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Government Clients</h2>
+          <div className="flex flex-row gap-8 overflow-x-auto pb-4 hide-scrollbar">
+            {governmentClients.map((client: any, idx: number) => (
+              <div key={client.alt} className="flex flex-col items-center min-w-[120px] max-w-[140px]">
+                <img
+                  src={client.src.src}
+                  alt={client.alt}
+                  title={client.alt}
+                  className="w-20 h-20 object-contain rounded-lg shadow-md bg-white mb-2"
+                  loading="lazy"
+                />
+                <span className="text-xs text-center text-muted-foreground truncate w-full" title={client.alt}>{client.alt}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Private Sector Clients */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Private Sector Clients</h2>
+          <div className="flex flex-row gap-8 overflow-x-auto pb-4 hide-scrollbar">
+            {privateClients.map((client: any, idx: number) => (
+              <div key={client.alt} className="flex flex-col items-center min-w-[120px] max-w-[140px]">
+                <img
+                  src={client.src.src}
+                  alt={client.alt}
+                  title={client.alt}
+                  className="w-20 h-20 object-contain rounded-lg shadow-md bg-white mb-2"
+                  loading="lazy"
+                />
+                <span className="text-xs text-center text-muted-foreground truncate w-full" title={client.alt}>{client.alt}</span>
+              </div>
             ))}
           </div>
         </div>

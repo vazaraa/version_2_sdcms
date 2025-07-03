@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { RetroGrid } from "@/components/ui/retro-grid";
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 const services = [
   {
@@ -58,15 +59,21 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-extrabold text-center text-red-600 mb-4 mt-6 drop-shadow-sm w-full">
           SDC Management Solutions
         </h1>
-        {/* Subtitle with colored keywords */}
-        <p className="text-lg md:text-2xl text-center text-gray-700 w-full mb-6 font-medium">
-          Empowering organizations with
-          <span className="text-blue-600 font-semibold"> consulting</span>,
-          <span className="text-yellow-500 font-semibold"> staffing</span>,
-          <span className="text-red-500 font-semibold"> compliance</span>, and
-          <span className="text-blue-600 font-semibold"> industrial solutions</span>
-          for sustainable growth and success.
-        </p>
+        
+        {/* Subtitle with animated keywords, all same size and inline */}
+        <div className="flex flex-wrap justify-center items-center gap-2 text-xl md:text-2xl font-semibold text-gray-700 mb-6">
+          <span>Empowering organizations with</span>
+          <span>
+            <ContainerTextFlip
+              words={["consulting", "staffing", "compliance", "industrial solutions"]}
+              wordColors={["#2563eb", "#f59e42", "#ef4444", "#059669"]}
+              className="inline bg-transparent shadow-none p-0"
+              textClassName="text-inherit font-inherit"
+              animationDuration={900}
+            />
+          </span>
+          <span>for sustainable growth and success.</span>
+        </div>
         {/* Core Services */}
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 mt-2 w-full">Our Core Services</h2>
         <div className="flex flex-wrap justify-center gap-6 w-full px-0 mb-8">
