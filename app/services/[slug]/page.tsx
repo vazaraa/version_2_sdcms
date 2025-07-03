@@ -30,7 +30,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
     );
   }
 
-  return <ServiceDetailClient service={service} iconName={service.icon} />;
+  return <ServiceDetailClient service={service} Icon={service.icon} />;
 }
 
 export async function generateStaticParams() {

@@ -10,26 +10,11 @@ import type { Service } from '@/data/services';
 
 interface ServiceDetailClientProps {
   service: Service;
-  iconName: string;
+  Icon: React.ComponentType<{ size?: string | number }>;
 }
 
-function getIcon(iconName: string) {
-  switch (iconName) {
-    case 'Building2': return Building2;
-    case 'Users': return Users;
-    case 'Award': return Award;
-    case 'HardHat': return HardHat;
-    case 'Mountain': return Mountain;
-    case 'Shield': return Shield;
-    case 'Sparkles': return Sparkles;
-    case 'GraduationCap': return GraduationCap;
-    default: return Building2;
-  }
-}
-
-const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service, iconName }) => {
+const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service, Icon }) => {
   const containerRef = useGSAP();
-  const Icon = getIcon(iconName);
 
   return (
     <div ref={containerRef} className="min-h-screen">
@@ -40,7 +25,7 @@ const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service, icon
             <div className="fade-in">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground">
-                  <Icon className="h-8 w-8" />
+                  <Icon size={32} />
                 </div>
                 <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                   {service.category}
