@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Lenis from "lenis";
+
 import {
   ArrowRight,
   Building2,
@@ -62,17 +62,7 @@ const CompaniesPreview = () => {
         },
       });
     }, section);
-
-    const lenis = new Lenis();
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    return () => {
-      ctx.revert();
-    };
+    
   }, []);
 
   return (
