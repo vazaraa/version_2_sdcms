@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import {
   ArrowRight,
   Building2,

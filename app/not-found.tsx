@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, ArrowLeft } from 'lucide-react';
@@ -27,12 +29,30 @@ export default function NotFound() {
           
           <Button 
             variant="outline" 
-            onClick={() => window.history.back()}
             className="w-full"
+            onClick={() => window.history.back()}
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Go Back
           </Button>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-border">
+          <p className="text-sm text-muted-foreground mb-4">
+            Or explore our main sections:
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/services', label: 'Services' },
+              { href: '/projects', label: 'Projects' },
+              { href: '/contact', label: 'Contact' },
+            ].map((link) => (
+              <Button key={link.href} variant="ghost" size="sm" asChild>
+                <Link href={link.href}>{link.label}</Link>
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

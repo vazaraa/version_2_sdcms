@@ -18,7 +18,7 @@ export interface Service {
   benefits: string[];
   processSteps: string[];
   slug: string;
-  icon: React.ComponentType<{ className?: string; size?: string | number }>;
+  icon: string;
   image: string;
   category: string;
 }
@@ -45,7 +45,7 @@ export const services: Service[] = [
       'Reporting and Documentation'
     ],
     slug: 'government',
-    icon: Target,
+    icon: 'Target',
     image: '/images/services/government-bg.webp',
     category: 'Government'
   },
@@ -70,7 +70,7 @@ export const services: Service[] = [
       'Final Selection and Onboarding'
     ],
     slug: 'staffing',
-    icon: Users,
+    icon: 'Users',
     image: '/images/services/staffing-bg.webp',
     category: 'Human Resources'
   },
@@ -104,7 +104,7 @@ export const services: Service[] = [
       'Ongoing Support and Maintenance'
     ],
     slug: 'details-of-clients-served',
-    icon: Award,
+    icon: 'Award',
     image: '/images/services/government-bg.webp',
     category: 'Portfolio'
   },
@@ -129,7 +129,7 @@ export const services: Service[] = [
       'Project Handover'
     ],
     slug: 'construction',
-    icon: Building,
+    icon: 'Building',
     image: '/images/services/construction-bg.webp',
     category: 'Infrastructure'
   },
@@ -154,7 +154,7 @@ export const services: Service[] = [
       'Transportation and Delivery'
     ],
     slug: 'mining',
-    icon: Truck,
+    icon: 'Truck',
     image: '/images/services/mining-bg.webp',
     category: 'Mining'
   },
@@ -179,7 +179,7 @@ export const services: Service[] = [
       'Ongoing Monitoring and Support'
     ],
     slug: 'security',
-    icon: Shield,
+    icon: 'Shield',
     image: '/images/services/security-bg.webp',
     category: 'Security'
   },
@@ -204,7 +204,7 @@ export const services: Service[] = [
       'Quality Monitoring and Feedback'
     ],
     slug: 'housekeeping',
-    icon: Wrench,
+    icon: 'Wrench',
     image: '/images/services/housekeeping-bg.webp',
     category: 'Facility Management'
   },
@@ -229,7 +229,7 @@ export const services: Service[] = [
       'Continuous Improvement'
     ],
     slug: 'training',
-    icon: GraduationCap,
+    icon: 'GraduationCap',
     image: '/images/services/training-bg.webp',
     category: 'Education'
   },
@@ -254,7 +254,7 @@ export const services: Service[] = [
       'Insights Delivery'
     ],
     slug: 'survey',
-    icon: ClipboardList,
+    icon: 'ClipboardList',
     image: '/images/services/survey-bg.webp',
     category: 'Research'
   }

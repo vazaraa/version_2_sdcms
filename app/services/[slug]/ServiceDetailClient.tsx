@@ -5,16 +5,28 @@ import { useGSAP } from '@/hooks/useGSAP';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle, Building2, Users, Award, HardHat, Mountain, Shield, Sparkles, GraduationCap } from 'lucide-react';
+import { ArrowRight, CheckCircle, Building2, Users, Award, HardHat, Mountain, Shield, Sparkles, GraduationCap, Target, Truck, Wrench } from 'lucide-react';
 import type { Service } from '@/data/services';
 
 interface ServiceDetailClientProps {
   service: Service;
-  Icon: React.ComponentType<{ size?: string | number }>;
 }
 
-const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service, Icon }) => {
+const iconMap: Record<string, React.ComponentType<{ size?: string | number }>> = {
+  Target,
+  Users,
+  Building: Building2,
+  Truck,
+  Shield,
+  Wrench,
+  GraduationCap,
+  ClipboardList: Sparkles, // fallback if not imported, adjust as needed
+  Award,
+};
+
+const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service }) => {
   const containerRef = useGSAP();
+  const Icon = iconMap[service.icon] || Target;
 
   return (
     <div ref={containerRef} className="min-h-screen">
