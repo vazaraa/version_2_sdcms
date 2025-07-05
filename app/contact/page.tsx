@@ -63,28 +63,24 @@ export default function ContactPage() {
 
   const offices = [
     {
-      city: 'Mumbai',
-      address: '123 Business District, Corporate Tower, Floor 15',
-      phone: '+91 22 1234 5678',
-      email: 'mumbai@sdcmanagement.com'
+      city: 'Head Office - Guntur',
+      address: 'Vidya Nagar 1st Lane, Guntur - 522007, Andhra Pradesh'
     },
     {
-      city: 'Delhi NCR',
-      address: '456 Corporate Hub, Sector 44, Gurgaon',
-      phone: '+91 124 567 8901',
-      email: 'delhi@sdcmanagement.com'
+      city: 'Visakhapatnam',
+      address: '39-33-9/2, Vuda Layout, Plot Mig 328, Varma Complex, Murali Nagar, Visakhapatnam, Andhra Pradesh 530007'
+    },
+    {
+      city: 'Hyderabad',
+      address: '3-12-8/a, above SBI bank, 2nd floor, Ganesh nagar, Ramanthapur, Hyderabad - 500013.'
     },
     {
       city: 'Bangalore',
-      address: '789 Tech Park, Electronic City, Phase 1',
-      phone: '+91 80 2345 6789',
-      email: 'bangalore@sdcmanagement.com'
+      address: 'Kumbalgodu, near raja rajeshwari College, Bangalore - 560074.'
     },
     {
-      city: 'Pune',
-      address: '321 IT Hub, Hinjewadi, Phase 2',
-      phone: '+91 20 3456 7890',
-      email: 'pune@sdcmanagement.com'
+      city: 'Delhi',
+      address: 'WZ-9, 2nd Floor, Tatarpur, Tagore Garden, New Delhi - 110027'
     }
   ];
 
@@ -321,18 +317,6 @@ export default function ContactPage() {
                       <MapPin className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
                       <p className="text-sm text-muted-foreground">
                         {office.address}
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                      <p className="text-sm text-muted-foreground">
-                        {office.phone}
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                      <p className="text-sm text-muted-foreground">
-                        {office.email}
                       </p>
                     </div>
                   </div>

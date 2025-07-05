@@ -13,131 +13,141 @@ export default function CareersPage() {
   const containerRef = useGSAP();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
 
+  const scrollToApplyForm = () => {
+    const applyForm = document.getElementById('apply-form');
+    if (applyForm) {
+      applyForm.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const jobOpenings = [
     {
       id: '1',
-      title: 'Senior Project Manager',
-      department: 'Project Management',
-      location: 'Mumbai, Maharashtra',
+      title: 'Accountant – Guntur',
+      department: '',
+      location: 'Guntur',
       type: 'Full-time',
-      experience: '5-8 years',
-      description: 'Lead complex projects from initiation to closure, managing cross-functional teams and ensuring successful delivery.',
+      experience: 'Minimum 2 years',
+      description: 'Proficiency in GST, Tally, Excel, TDS, and IT Returns.',
       requirements: [
-        'PMP certification preferred',
-        'Experience in government projects',
-        'Strong leadership and communication skills',
-        'Proficiency in project management tools'
+        'Proficiency in GST',
+        'Proficiency in Tally',
+        'Proficiency in Excel',
+        'Proficiency in TDS',
+        'Proficiency in IT Returns'
       ],
-      responsibilities: [
-        'Manage project lifecycle and deliverables',
-        'Coordinate with stakeholders and team members',
-        'Ensure quality and timeline adherence',
-        'Risk management and mitigation'
-      ]
+      responsibilities: []
     },
     {
       id: '2',
-      title: 'Business Analyst',
-      department: 'Consulting',
-      location: 'Delhi NCR',
+      title: 'Accountant – Hyderabad',
+      department: '',
+      location: 'Hyderabad',
       type: 'Full-time',
-      experience: '3-5 years',
-      description: 'Analyze business processes, identify improvement opportunities, and develop strategic recommendations.',
+      experience: 'Minimum 2 years',
+      description: 'Hands-on experience with Tally ERP.',
       requirements: [
-        'MBA or equivalent qualification',
-        'Strong analytical and problem-solving skills',
-        'Experience in process improvement',
-        'Excellent presentation skills'
+        'Hands-on experience with Tally ERP'
       ],
-      responsibilities: [
-        'Conduct business process analysis',
-        'Develop improvement recommendations',
-        'Create detailed documentation',
-        'Support implementation activities'
-      ]
+      responsibilities: []
     },
     {
       id: '3',
-      title: 'Software Developer',
-      department: 'Technology',
-      location: 'Bangalore, Karnataka',
+      title: 'Store Executive',
+      department: '',
+      location: '',
       type: 'Full-time',
-      experience: '2-4 years',
-      description: 'Develop and maintain software applications using modern technologies and best practices.',
+      experience: '1–2 years',
+      description: 'Good communication skills, basic computer knowledge, and a background in sales.',
       requirements: [
-        'Proficiency in Java, Python, or .NET',
-        'Experience with web technologies',
-        'Knowledge of database systems',
-        'Understanding of software development lifecycle'
+        'Good communication skills',
+        'Basic computer knowledge',
+        'Background in sales'
       ],
-      responsibilities: [
-        'Design and develop software applications',
-        'Write clean and maintainable code',
-        'Participate in code reviews',
-        'Collaborate with cross-functional teams'
-      ]
+      responsibilities: []
     },
     {
       id: '4',
-      title: 'HR Specialist',
-      department: 'Human Resources',
-      location: 'Pune, Maharashtra',
+      title: 'Sales Executive',
+      department: '',
+      location: '',
       type: 'Full-time',
-      experience: '2-4 years',
-      description: 'Support recruitment, employee relations, and HR operations to build a strong organizational culture.',
+      experience: '1–2 years in FMCG sales',
+      description: 'Proven experience in field sales within the FMCG sector.',
       requirements: [
-        'Degree in HR or related field',
-        'Experience in recruitment and selection',
-        'Knowledge of labor laws',
-        'Strong interpersonal skills'
+        'Proven experience in field sales within the FMCG sector'
       ],
-      responsibilities: [
-        'Manage recruitment processes',
-        'Support employee relations',
-        'Maintain HR documentation',
-        'Assist in policy development'
-      ]
+      responsibilities: []
+    },
+    {
+      id: '5',
+      title: 'Tender Executive',
+      department: '',
+      location: '',
+      type: 'Full-time',
+      experience: '0–1 year',
+      description: 'Any graduate. Good communication skills, basic computer knowledge, proficiency in English (spoken and written).',
+      requirements: [
+        'Any graduate',
+        'Good communication skills',
+        'Basic computer knowledge',
+        'Proficiency in English (spoken and written)'
+      ],
+      responsibilities: []
     }
   ];
 
   const internships = [
     {
       id: '1',
-      title: 'Project Management Intern',
+      title: 'Junior Web & App Developer Intern',
       duration: '6 months',
-      location: 'Mumbai, Maharashtra',
-      description: 'Gain hands-on experience in project management methodologies and tools.',
+      location: 'Guntur (On-site)',
+      description: 'Full-time, on-site internship providing real-world project exposure in website and mobile app development.',
       requirements: [
-        'Currently pursuing MBA or Engineering',
-        'Interest in project management',
-        'Good communication skills',
-        'Willingness to learn'
+        'Final-year students or recent graduates in Computer Science, IT, or related disciplines',
+        'Portfolio or GitHub profile is a plus (not mandatory)',
+        'Knowledge of HTML, CSS, JavaScript, and frameworks like React or Flutter',
+        'Understanding of backend integrations using Firebase, PHP, or Node.js'
       ]
     },
     {
       id: '2',
-      title: 'Business Development Intern',
-      duration: '3-6 months',
-      location: 'Delhi NCR',
-      description: 'Support business development activities and market research initiatives.',
+      title: 'E-Commerce Executive Intern',
+      duration: '6 months',
+      location: 'Guntur (On-site)',
+      description: 'Dynamic and detail-oriented role to support digital retail operations with practical experience in managing online listings, order processing, and customer service.',
       requirements: [
-        'Currently pursuing MBA or related degree',
-        'Strong research and analytical skills',
-        'Excellent presentation abilities',
-        'Proactive and self-motivated'
+        'Graduate or final-year student in Commerce, Business, or related fields',
+        'Familiarity with e-commerce platforms is a plus',
+        'Basic knowledge of Excel and digital marketing tools desirable',
+        'Strong communication and organizational skills'
       ]
     },
     {
       id: '3',
-      title: 'Technology Intern',
+      title: 'Recruiting Intern (HR)',
       duration: '6 months',
-      location: 'Bangalore, Karnataka',
-      description: 'Work on real projects using cutting-edge technologies and development practices.',
+      location: 'Guntur (On-site)',
+      description: 'Support the Human Resources team in end-to-end recruitment with valuable exposure to HR operations, hiring workflows, and talent acquisition strategies.',
       requirements: [
-        'Currently pursuing Computer Science or IT',
-        'Knowledge of programming languages',
-        'Understanding of software development',
-        'Eagerness to learn new technologies'
+        'MBA (HR) students or recent graduates preferred',
+        'Strong communication and organizational skills',
+        'Familiarity with job portals like Naukri, Indeed, etc., is a plus',
+        'Attention to detail and ability to maintain candidate databases'
+      ]
+    },
+    {
+      id: '4',
+      title: 'Tender Executive Intern',
+      duration: '6 months',
+      location: 'Guntur (On-site)',
+      description: 'Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.',
+      requirements: [
+        'Students or graduates in Business Administration, Commerce, or relevant fields',
+        'Basic understanding of government procurement/tendering process preferred (not mandatory)',
+        'Strong attention to detail and MS Office skills',
+        'Ability to coordinate with cross-functional teams'
       ]
     }
   ];
@@ -367,7 +377,11 @@ export default function CareersPage() {
                     </ul>
                   </div>
 
-                  <Button variant="outline" className="w-full group">
+                  <Button 
+                    variant="outline" 
+                    className="w-full group"
+                    onClick={scrollToApplyForm}
+                  >
                     Apply for Internship
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -379,7 +393,7 @@ export default function CareersPage() {
       </section>
 
       {/* Application Form */}
-      <section className="py-20 bg-muted/30">
+      <section id="apply-form" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">

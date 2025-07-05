@@ -44,7 +44,7 @@ export const services: Service[] = [
       'Monitoring and Quality Control',
       'Reporting and Documentation'
     ],
-    slug: 'government',
+    slug: 'government-and-outsourcing',
     icon: 'Target',
     image: '/images/services/government-bg.webp',
     category: 'Government'
@@ -69,7 +69,7 @@ export const services: Service[] = [
       'Background Verification',
       'Final Selection and Onboarding'
     ],
-    slug: 'staffing',
+    slug: 'recruitment-and-staffing-solutions',
     icon: 'Users',
     image: '/images/services/staffing-bg.webp',
     category: 'Human Resources'
@@ -153,7 +153,7 @@ export const services: Service[] = [
       'Quality Control and Testing',
       'Transportation and Delivery'
     ],
-    slug: 'mining',
+    slug: 'mining-raw-materials',
     icon: 'Truck',
     image: '/images/services/mining-bg.webp',
     category: 'Mining'
@@ -178,7 +178,7 @@ export const services: Service[] = [
       'Technology Installation',
       'Ongoing Monitoring and Support'
     ],
-    slug: 'security',
+    slug: 'security-services',
     icon: 'Shield',
     image: '/images/services/security-bg.webp',
     category: 'Security'
@@ -203,7 +203,7 @@ export const services: Service[] = [
       'Regular Service Delivery',
       'Quality Monitoring and Feedback'
     ],
-    slug: 'housekeeping',
+    slug: 'housekeeping-services',
     icon: 'Wrench',
     image: '/images/services/housekeeping-bg.webp',
     category: 'Facility Management'
@@ -228,7 +228,7 @@ export const services: Service[] = [
       'Skills Assessment',
       'Continuous Improvement'
     ],
-    slug: 'training',
+    slug: 'training-and-development',
     icon: 'GraduationCap',
     image: '/images/services/training-bg.webp',
     category: 'Education'

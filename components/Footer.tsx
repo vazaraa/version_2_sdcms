@@ -24,6 +24,7 @@ const Footer = () => {
   ];
 
   const companies = [
+    'Sri Durga Consulting Services',
     'Urban Expert',
     'Agro Expert',
     'IT Expert',
@@ -115,18 +116,16 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">
-                  123 Business District<br />
-                  Corporate Tower, Floor 15<br />
-                  City, State 12345
+                  [Your Full Company Address]
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground text-sm">+91-XXXXXXXXXX</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">info@sdcmanagement.com</p>
+                <p className="text-muted-foreground text-sm">info@sdcs.com</p>
               </div>
             </div>
           </div>
@@ -134,7 +133,7 @@ const Footer = () => {
 
         {/* Group Companies Section */}
         <div className="border-t py-8">
-          <h3 className="font-semibold text-foreground mb-4 text-center">Our Group Companies</h3>
+          <h3 className="font-semibold text-foreground mb-4 text-center">Other Group Companies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {companies.map((company) => (
               <Link

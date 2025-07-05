@@ -74,7 +74,7 @@ export default function AboutPage() {
 
   const companies = [
     {
-      name: 'Sri Durga Consultancy Services',
+      name: 'Sri Durga Consulting Services',
       type: 'Government & Compliance Consulting',
       established: '2013',
       description: 'Specialized consultancy services focusing on government projects and compliance.',
@@ -159,42 +159,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Introduction */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Our Foundation
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  SDCMS was established in 2013, SDCMS group headquarters located in Andhra 
-                  Pradesh, Most dependable business support and growth partner. And our company also 
-                  Recognized Outsourcing Agency since 2013.
-                </p>
-                <p>
-                  It is recognized by the State Empanelment Committee as Outsourcing Agency.
-                </p>
-                <p>
-                  We believe in developing blue collar worker's proficiency to render professional 
-                  services with unparalleled ethics. We provide a diverse set of services from 
-                  skilling and placement to fully managed solutions to suit the needs of households 
-                  and businesses across various industries, alike.
-                </p>
-              </div>
-            </div>
-
-            <div className="slide-in-right flex justify-center items-center">
-              <img
-                src="/images/logo.png"
-                alt="SDCMS Logo"
-                className="rounded-lg shadow-2xl w-full max-w-md h-auto object-contain bg-white p-6"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Catalysts for Change */}
       <section className="py-20 bg-muted/30">

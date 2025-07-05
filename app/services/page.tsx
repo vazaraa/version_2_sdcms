@@ -36,8 +36,6 @@ export default function ServicesPage() {
     }
   };
 
-
-
   return (
     <div ref={containerRef} className="min-h-screen">
       {/* Hero Section */}

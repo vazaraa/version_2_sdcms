@@ -12,69 +12,25 @@ export default function CertificatesPage() {
 
   const certificates = [
     {
-      id: '1',
-      title: 'ISO 9001:2015 Quality Management',
+      id: '7',
+      title: 'ISO Certification',
       issuer: 'International Organization for Standardization',
-      issueDate: '2023',
-      validUntil: '2026',
-      description: 'Certified for maintaining high-quality management systems and continuous improvement processes.',
-      category: 'Quality Management',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+      issueDate: '2024',
+      validUntil: '2027',
+      description: 'Certified for compliance with international standards.',
+      category: 'Quality & Standards',
+      image: '/images/certificates/iso.jpeg',
       icon: Award
     },
     {
-      id: '2',
-      title: 'ISO 27001:2013 Information Security',
-      issuer: 'International Organization for Standardization',
-      issueDate: '2023',
-      validUntil: '2026',
-      description: 'Certified for implementing and maintaining robust information security management systems.',
-      category: 'Information Security',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg',
-      icon: Shield
-    },
-    {
-      id: '3',
-      title: 'CMMI Level 3 Certification',
-      issuer: 'Capability Maturity Model Integration Institute',
-      issueDate: '2022',
-      validUntil: '2025',
-      description: 'Recognized for defined and standardized processes across all project management activities.',
-      category: 'Process Maturity',
-      image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg',
-      icon: CheckCircle
-    },
-    {
-      id: '4',
-      title: 'PMP Certified Professionals',
-      issuer: 'Project Management Institute',
-      issueDate: '2023',
-      validUntil: 'Ongoing',
-      description: 'Multiple team members certified in Project Management Professional standards and best practices.',
-      category: 'Project Management',
-      image: 'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg',
-      icon: Users
-    },
-    {
-      id: '5',
-      title: 'Government Vendor Registration',
-      issuer: 'Government of India',
-      issueDate: '2020',
-      validUntil: '2025',
-      description: 'Registered and approved vendor for government projects and procurement processes.',
-      category: 'Government Compliance',
-      image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg',
-      icon: Building2
-    },
-    {
-      id: '6',
-      title: 'Industry Excellence Award',
-      issuer: 'Management Consulting Association',
-      issueDate: '2023',
-      validUntil: 'Permanent',
-      description: 'Recognized for outstanding contribution to the management consulting industry.',
-      category: 'Industry Recognition',
-      image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg',
+      id: '8',
+      title: 'EduBridge Certificate',
+      issuer: 'EduBridge',
+      issueDate: '2024',
+      validUntil: '2027',
+      description: 'Awarded for successful completion of professional training.',
+      category: 'Professional Training',
+      image: '/images/certificates/edubridge.jpeg',
       icon: Award
     }
   ];
@@ -125,6 +81,46 @@ export default function CertificatesPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Recognitions */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Awards & Recognitions
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Celebrating our achievements and industry recognition for excellence in HR, staffing, and workplace culture.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Award 1 */}
+            <div className="text-center">
+              <img src="/images/certificates/Screenshot_4-7-2025_15133_.jpeg" alt="HR Talent Management Leadership Awards" className="mx-auto mb-4 h-14 object-contain" />
+              <div className="text-primary font-medium mb-1">Recognition</div>
+              <div className="font-semibold mb-1">Best Overall Recruiting & Staffing Organization of the Year 2020</div>
+            </div>
+            {/* Award 2 */}
+            <div className="text-center">
+              <img src="/images/certificates/Screenshot_4-7-2025_15155_.jpeg" alt="Global HR Excellence Awards" className="mx-auto mb-4 h-14 object-contain" />
+              <div className="text-primary font-medium mb-1">Recognition</div>
+              <div className="font-semibold mb-1">Best Service Provider in HR for the year 2020</div>
+            </div>
+            {/* Award 3 */}
+            <div className="text-center">
+              <img src="/images/certificates/Screenshot_4-7-2025_15214_.jpeg" alt="HR Vendors of the Year 2017" className="mx-auto mb-4 h-14 object-contain" />
+              <div className="text-primary font-medium mb-1">Service Provider Ratings</div>
+              <div className="font-semibold mb-1">Best Staffing Organization / Firm for the year 2020</div>
+            </div>
+            {/* Award 4 */}
+            <div className="text-center">
+              <img src="/images/certificates/Screenshot_4-7-2025_1522_.jpeg" alt="Dream Companies to Work For" className="mx-auto mb-4 h-14 object-contain" />
+              <div className="text-primary font-medium mb-1">2019 & 2020</div>
+              <div className="font-semibold mb-1">Dream Companies to work for in India</div>
+            </div>
           </div>
         </div>
       </section>
@@ -203,61 +199,6 @@ export default function CertificatesPage() {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Quality Commitment */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="slide-in-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Our Commitment to Excellence
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  At SDC Management Solutions, we believe that certifications are more than just 
-                  credentials – they represent our unwavering commitment to delivering excellence 
-                  in every aspect of our operations.
-                </p>
-                <p>
-                  Our comprehensive certification portfolio ensures that we maintain the highest 
-                  standards of quality, security, and professional competence across all our 
-                  service offerings and business processes.
-                </p>
-                <p>
-                  We continuously invest in maintaining and upgrading our certifications, ensuring 
-                  that our clients receive services that meet and exceed international standards 
-                  and industry best practices.
-                </p>
-              </div>
-              
-              <div className="mt-8 space-y-4">
-                <h3 className="text-xl font-semibold text-foreground">Key Benefits:</h3>
-                <div className="space-y-3">
-                  {[
-                    'Assured quality and compliance standards',
-                    'Reduced project risks and enhanced reliability',
-                    'International recognition and credibility',
-                    'Continuous improvement and innovation'
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span className="text-muted-foreground">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="slide-in-right">
-              <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-                alt="Quality commitment"
-                className="rounded-lg shadow-2xl w-full h-auto"
-              />
-            </div>
           </div>
         </div>
       </section>

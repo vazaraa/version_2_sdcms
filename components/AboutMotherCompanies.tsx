@@ -32,28 +32,28 @@ const companies = [
 export default function AboutMotherCompanies() {
   return (
     <section className="py-16 px-2 md:px-0 w-full flex flex-col items-center bg-white relative overflow-x-hidden">
-      <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-red-600 bg-clip-text text-transparent mb-2 tracking-tight animate-fade-in">
+      <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-red-600 bg-clip-text text-transparent mb-2 tracking-tight">
         SDCS
       </h2>
-      <div className="text-xl md:text-2xl font-bold text-black mb-10 tracking-widest animate-fade-in delay-100">
+      <div className="text-xl md:text-2xl font-bold text-black mb-10 tracking-widest">
         THE MOTHER OF MULTIPLE COMPANIES
       </div>
-      {/* Animated horizontal line with dots */}
+      {/* Horizontal line with dots */}
       <div className="relative w-full max-w-5xl flex items-center justify-between mb-12 h-16 md:h-24">
         {/* Horizontal line */}
-        <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 rounded-full animate-draw-line" style={{zIndex:1}} />
+        <div className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 rounded-full" style={{zIndex:1}} />
         {/* Dots and logos */}
         {companies.map((company, idx) => (
-          <div key={company.name} className="flex flex-col items-center z-10 w-1/5 animate-pop-in" style={{animationDelay: `${0.2 + idx * 0.15}s`}}>
+          <div key={company.name} className="flex flex-col items-center z-10 w-1/5">
             {/* Dot */}
-            <div className="w-5 h-5 bg-black rounded-full border-4 border-white shadow-lg mb-2 animate-pop-in" />
+            <div className="w-5 h-5 bg-black rounded-full border-4 border-white shadow-lg mb-2" />
             {/* Logo */}
             {company.img ? (
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden mb-2 animate-pop-in">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden mb-2">
                 <Image src={company.img} alt={company.name} width={80} height={80} className="object-contain w-full h-full" />
               </div>
             ) : (
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-full flex items-center justify-center shadow-lg mb-2 animate-pop-in">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-full flex items-center justify-center shadow-lg mb-2">
                 <span className="text-2xl text-gray-500">?</span>
               </div>
             )}
@@ -63,7 +63,7 @@ export default function AboutMotherCompanies() {
       {/* Company names and subtitles */}
       <div className="w-full max-w-5xl flex flex-row justify-between items-start mt-2">
         {companies.map((company, idx) => (
-          <div key={company.name + '-label'} className="flex flex-col items-center w-1/5 animate-fade-in" style={{animationDelay: `${0.5 + idx * 0.1}s`}}>
+          <div key={company.name + '-label'} className="flex flex-col items-center w-1/5">
             <span className="font-bold text-base md:text-lg text-black text-center leading-tight">
               {company.name}
             </span>
@@ -73,31 +73,6 @@ export default function AboutMotherCompanies() {
           </div>
         ))}
       </div>
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
-        }
-        @keyframes pop-in {
-          0% { opacity: 0; transform: scale(0.7); }
-          80% { opacity: 1; transform: scale(1.1); }
-          100% { opacity: 1; transform: scale(1); }
-        }
-        .animate-pop-in {
-          animation: pop-in 0.7s cubic-bezier(0.4,0,0.2,1) both;
-        }
-        @keyframes draw-line {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-        .animate-draw-line {
-          animation: draw-line 1.2s cubic-bezier(0.4,0,0.2,1) both;
-        }
-      `}</style>
     </section>
   );
 } 
