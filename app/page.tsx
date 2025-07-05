@@ -16,8 +16,8 @@ export default function Home() {
     <div ref={containerRef}>
       <Hero />
       <AboutSection />
-      <ProjectsOverview />
-      <ServicesPreview />
+      {/* <ProjectsOverview />
+      <ServicesPreview /> */}
       <ClientsScroller />
       <CompaniesPreview />
     </div>

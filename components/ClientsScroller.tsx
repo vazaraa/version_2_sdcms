@@ -2,54 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-
-const govClients = [
-  {
-    name: "Cement Corporation of India, Tandur",
-    src: "/images/GOV-SECTOR/cci.jpg",
-    alt: "Cement Corporation of India Tandur"
-  },
-  {
-    name: "Greater Visakhapatnam Municipal Corporation, Visakhapatnam",
-    src: "/images/GOV-SECTOR/visakhapatanam municap corporation.jpg",
-    alt: "Greater Visakhapatnam Municipal Corporation"
-  },
-  {
-    name: "Polavaram Project Authority, Hyderabad",
-    src: "/images/GOV-SECTOR/PLAVARAMAUTHORITY.jpg",
-    alt: "Polavaram Project Authority Hyderabad"
-  },
-  {
-    name: "Endowments Department, Andhra Pradesh",
-    src: "/images/GOV-SECTOR/andhra-pradesh-endowments-department.jpg",
-    alt: "Endowments Department Andhra Pradesh"
-  },
-  {
-    name: "APMSIDC IT Park, Mangalagiri",
-    src: "/images/GOV-SECTOR/apmsidc.jpg",
-    alt: "APMSIDC IT Park Mangalagirl"
-  },
-  {
-    name: "GGH Guntur",
-    src: "/images/GOV-SECTOR/GGH.jpg",
-    alt: "GGH Guntur"
-  },
-  {
-    name: "APCRDA Amaravathi",
-    src: "/images/GOV-SECTOR/apcrda.jpg",
-    alt: "APCRDA Amaravthi"
-  },
-  {
-    name: "Military Engineer Services, Secunderabad",
-    src: "/images/GOV-SECTOR/MES-Military-Engineer-Services-logo.jpg",
-    alt: "Military Engineer Services Secunderabad"
-  },
-  {
-    name: "Tobacco Board, AP",
-    src: "/images/GOV-SECTOR/tobocco board.jpg",
-    alt: "Tobacco Board AP"
-  }
-];
+import { homepageClients } from '@/data/clients';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const ClientsScroller = () => {
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -62,23 +16,30 @@ const ClientsScroller = () => {
     
     if (!scrollerContent) return;
 
+    // Set min-width to fit all cards in a row
+    scrollerContent.style.minWidth = 'max-content';
+
     // Clone the content for seamless infinite scroll
     const clone = scrollerContent.cloneNode(true) as HTMLElement;
+    clone.classList.add('scroller-clone');
     scroller.appendChild(clone);
 
     // Calculate the total width of one set of cards
     const cardWidth = scrollerContent.offsetWidth;
-    
+
     // Create the infinite scroll animation
     const tl = gsap.timeline({
       repeat: -1,
       ease: "none"
     });
 
-    tl.to(scrollerContent, {
+    tl.to([scrollerContent, clone], {
       x: -cardWidth,
       duration: 30, // Adjust speed as needed
-      ease: "none"
+      ease: "none",
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % cardWidth)
+      }
     });
 
     // Pause animation on hover
@@ -92,6 +53,7 @@ const ClientsScroller = () => {
       tl.kill();
       scroller.removeEventListener('mouseenter', pauseAnimation);
       scroller.removeEventListener('mouseleave', resumeAnimation);
+      if (clone && clone.parentNode) clone.parentNode.removeChild(clone);
     };
   }, []);
 
@@ -112,21 +74,32 @@ const ClientsScroller = () => {
         </div>
 
         {/* Single Row Infinite Scrolling Client Cards */}
+        <TooltipProvider>
         <div ref={scrollerRef} className="scroller relative overflow-hidden flex items-center">
-          <div className="scroller-content flex flex-nowrap items-center space-x-8 w-auto">
-            {govClients.map((client, idx) => (
-              <div key={idx} className="client-card flex-shrink-0 w-80 bg-card rounded-lg p-8 shadow-lg flex flex-col items-center justify-center">
+          <div className="scroller-content flex flex-nowrap items-center space-x-8 w-auto" style={{ minWidth: 'max-content' }}>
+            {homepageClients.map((client, idx) => (
+              <div key={idx} className="client-card flex-shrink-0 w-80 h-56 bg-card rounded-lg p-8 shadow-lg flex flex-col items-center justify-center">
                 <img
-                  src={client.src}
+                  src={typeof client.src === 'string' ? client.src : client.src.src}
                   alt={client.alt}
                   className="w-20 h-20 object-contain rounded-full mb-4 border border-muted"
                   loading="lazy"
                 />
-                <h3 className="font-semibold text-center text-foreground text-lg mb-2">{client.name}</h3>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <h3 className="font-semibold text-center text-foreground text-lg mb-2 text-ellipsis overflow-hidden whitespace-nowrap w-full">
+                      {client.name}
+                    </h3>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <span>{client.name}</span>
+                  </TooltipContent>
+                </Tooltip>
               </div>
             ))}
           </div>
         </div>
+        </TooltipProvider>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 fade-in">

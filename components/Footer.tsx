@@ -131,22 +131,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Group Companies Section */}
-        <div className="border-t py-8">
-          <h3 className="font-semibold text-foreground mb-4 text-center">Other Group Companies</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {companies.map((company) => (
-              <Link
-                key={company}
-                href="/group-companies"
-                className="px-4 py-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors text-sm"
-              >
-                {company}
-              </Link>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">

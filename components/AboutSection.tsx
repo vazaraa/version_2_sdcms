@@ -25,39 +25,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Mission, Vision, Values */}
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch w-full max-w-6xl mx-auto px-4 mb-12">
-        {/* Mission */}
-        <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col items-center justify-center">
-          <div className="w-24 h-24 mb-4">
-            <Lottie animationData={require('@/lotti/mission.json')} loop autoplay />
-          </div>
-          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Mission</h3>
-          <p className="text-gray-700 text-center">
-            To provide comprehensive management solutions that empower businesses to achieve their goals through strategic planning, efficient execution, and sustainable growth.
-          </p>
-        </div>
-        {/* Vision */}
-        <div className="flex-1 bg-blue-50 rounded-2xl shadow p-8 flex flex-col items-center justify-center">
-          <div className="w-24 h-24 mb-4">
-            <Lottie animationData={require('@/lotti/vision.json')} loop autoplay />
-                </div>
-          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Vision</h3>
-          <p className="text-gray-700 text-center">
-            To be the most trusted partner for businesses seeking innovative management solutions, recognized for our commitment to excellence and sustainable growth.
-                </p>
-              </div>
-        {/* Values */}
-        <div className="flex-1 bg-yellow-50 rounded-2xl shadow p-8 flex flex-col items-center justify-center">
-          <div className="w-24 h-24 mb-4">
-            <Lottie animationData={require('@/lotti/value.json')} loop autoplay />
-          </div>
-          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Values</h3>
-          <p className="text-gray-700 text-center">
-            Excellence, Integrity, Innovation, and Reliability form the foundation of our approach to business and client relationships.
-          </p>
-        </div>
-        </div>
+      
 
       {/* Leadership Excellence */}
       <div className="w-full flex justify-center py-10 px-2">
@@ -89,6 +57,7 @@ const AboutSection = () => {
               <li className="flex items-center gap-2"><CheckCircle2 className="text-green-400" /> Maintained 98% client satisfaction rate</li>
             </ul>
           </div>
+          
         </div>
       </div>
     </section>

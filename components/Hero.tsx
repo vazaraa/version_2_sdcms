@@ -10,7 +10,7 @@ import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 const services = [
   {
     title: 'Outsourcing',
-    desc: 'all types of man power and Government,Private,MNC.',
+    desc: 'all types of man power in Government,Private,MNC Sectors.',
     img: '/images/services/staffing-bg.webp',
   },
   {

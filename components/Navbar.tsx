@@ -25,7 +25,10 @@ import {
   Sparkles,
   GraduationCap,
   Home,
-  ShoppingCart
+  ShoppingCart,
+  Truck,
+  Wrench,
+  ClipboardList
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -41,14 +44,14 @@ const Navbar = () => {
   }, []);
 
   const services = [
-    { name: 'Government and Outsourcing', href: '/services/government-and-outsourcing', icon: Building2 },
+    { name: 'Government OutSourcing', href: '/services/government-and-outsourcing', icon: Target },
     { name: 'Recruitment and Staffing Solutions', href: '/services/recruitment-and-staffing-solutions', icon: Users },
-    { name: 'Details of Clients Served', href: '/services/details-of-clients-served', icon: Award },
-    { name: 'Construction', href: '/services/construction', icon: HardHat },
-    { name: 'Mining Raw Materials', href: '/services/mining-raw-materials', icon: Mountain },
+    { name: 'Construction Management', href: '/services/construction', icon: HardHat },
+    { name: 'Mining & Raw Materials', href: '/services/mining-raw-materials', icon: Mountain },
     { name: 'Security Services', href: '/services/security-services', icon: Shield },
     { name: 'Housekeeping Services', href: '/services/housekeeping-services', icon: Sparkles },
-    { name: 'Training and Development', href: '/services/training-and-development', icon: GraduationCap }
+    { name: 'Training & Development', href: '/services/training-and-development', icon: GraduationCap },
+    { name: 'Survey & Research', href: '/services/survey', icon: ClipboardList }
   ];
 
   const companies = [
@@ -179,6 +182,7 @@ const Navbar = () => {
                     <Building2 className="h-4 w-4" />
                     <span>All Companies</span>
                   </Link>
+                  
                   {companies.map((company) => {
                     const Icon = company.icon;
                     return (
@@ -244,7 +248,7 @@ const Navbar = () => {
               })}
               
               {/* Mobile Services */}
-              <div className="px-3 py-2">
+              <div className="mt-4">
                 <div className="font-semibold text-foreground mb-2 flex items-center space-x-2">
                   <Settings className="h-4 w-4" />
                   <span>Services</span>
@@ -268,7 +272,7 @@ const Navbar = () => {
               </div>
 
               {/* Mobile Group Companies */}
-              <div className="px-3 py-2">
+              <div className="mt-4">
                 <div className="font-semibold text-foreground mb-2 flex items-center space-x-2">
                   <Building2 className="h-4 w-4" />
                   <span>Group Companies</span>

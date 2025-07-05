@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle, Building2, Users, Award, HardHat, Mountain, Shield, Sparkles, GraduationCap, Target, Truck, Wrench } from 'lucide-react';
 import type { Service } from '@/data/services';
+import Image from 'next/image';
 
 interface ServiceDetailClientProps {
   service: Service;
@@ -56,12 +57,17 @@ const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service }) =>
                 </Link>
               </Button>
             </div>
-            <div className="slide-in-right">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="rounded-lg shadow-2xl w-full h-auto"
-              />
+            <div className="slide-in-right flex justify-center items-center">
+              <div className="relative w-full max-w-md aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

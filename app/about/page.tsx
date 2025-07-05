@@ -22,32 +22,12 @@ import {
   ArrowRight
 } from 'lucide-react';
 import AboutMotherCompanies from '@/components/AboutMotherCompanies';
+import Lottie from 'lottie-react';
+import { CircularTestimonials } from '@/components/ui/circular-testimonials';
+import { testimonials, boardMembers } from '@/data/testimonials';
 
 export default function AboutPage() {
   const containerRef = useGSAP();
-
-  const catalysts = [
-    { 
-      title: 'TRANSPARENCY', 
-      icon: Eye,
-      description: 'Open and honest communication in all our dealings'
-    },
-    { 
-      title: 'ETHICAL', 
-      icon: Shield,
-      description: 'Maintaining the highest standards of business ethics'
-    },
-    { 
-      title: 'RESPECT', 
-      icon: Heart,
-      description: 'Valuing every individual and their contributions'
-    },
-    { 
-      title: 'INTEGRITY', 
-      icon: CheckCircle,
-      description: 'Upholding moral and ethical principles consistently'
-    }
-  ];
 
   const coreValues = [
     {
@@ -159,76 +139,41 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
-
-      {/* Catalysts for Change */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Content */}
-            <div>
-              <div className="text-left max-w-2xl mb-12 lg:mb-0">
-                <div className="fade-in">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    The catalysts for change
-                  </h2>
-                  <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                    Our core principles that drive transformation and success
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {catalysts.map((catalyst, index) => {
-                  const Icon = catalyst.icon;
-                  return (
-                    <div key={catalyst.title} className="group bg-white/80 backdrop-blur-lg border border-gray-200 rounded-2xl shadow-lg p-6 flex items-start gap-4 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl animate-fade-in" style={{ animationDelay: `${0.2 + index * 0.12}s` }}>
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-yellow-300 via-pink-300 to-blue-300 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 animate-icon-pop">
-                        <Icon className="h-6 w-6 text-white drop-shadow-lg" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground mb-1">
-                          {catalyst.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-snug">
-                          {catalyst.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            {/* Right: Image */}
-            <div className="flex justify-center items-center">
-              <img
-                src="/images/our_core_values.webp"
-                alt="Catalysts for Change"
-                className="rounded-3xl shadow-2xl w-full max-w-2xl h-auto object-cover"
-              />
-            </div>
+      {/* Mission, Vision, Values */}
+      <div className="flex flex-col md:flex-row gap-12 justify-center items-stretch w-full max-w-7xl mx-auto px-2 mb-12">
+        {/* Mission */}
+        <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col items-center justify-center">
+          <div className="w-32 h-32 mb-4">
+            <Lottie animationData={require('@/lotti/mission.json')} loop autoplay />
           </div>
-          {/* Animations */}
-          <style jsx>{`
-            @keyframes fade-in {
-              from { opacity: 0; transform: translateY(30px); }
-              to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-fade-in {
-              animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
-            }
-            @keyframes icon-pop {
-              0% { opacity: 0; transform: scale(0.7); }
-              80% { opacity: 1; transform: scale(1.15); }
-              100% { opacity: 1; transform: scale(1); }
-            }
-            .animate-icon-pop {
-              animation: icon-pop 0.7s cubic-bezier(0.4,0,0.2,1) both;
-            }
-          `}</style>
+          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Mission</h3>
+          <p className="text-gray-700 text-center">
+            To provide comprehensive management solutions that empower businesses to achieve their goals through strategic planning, efficient execution, and sustainable growth.
+          </p>
         </div>
-      </section>
+        {/* Vision */}
+        <div className="flex-1 bg-blue-50 rounded-2xl shadow p-8 flex flex-col items-center justify-center">
+          <div className="w-32 h-32 mb-4">
+            <Lottie animationData={require('@/lotti/vision.json')} loop autoplay />
+          </div>
+          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Vision</h3>
+          <p className="text-gray-700 text-center">
+            To be the most trusted partner for businesses seeking innovative management solutions, recognized for our commitment to excellence and sustainable growth.
+          </p>
+        </div>
+        {/* Values */}
+        <div className="flex-1 bg-yellow-50 rounded-2xl shadow p-8 flex flex-col items-center justify-center">
+          <div className="w-32 h-32 mb-4">
+            <Lottie animationData={require('@/lotti/value.json')} loop autoplay />
+          </div>
+          <h3 className="text-xl font-bold mb-2 text-gray-900">Our Values</h3>
+          <p className="text-gray-700 text-center">
+            Excellence, Integrity, Innovation, and Reliability form the foundation of our approach to business and client relationships.
+          </p>
+        </div>
+      </div>
 
-      {/* Core Values */}
+      {/* Core Values with Image */}
       <section className="relative py-20 bg-background overflow-hidden">
         {/* Decorative background shape */}
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-yellow-200 via-pink-100 to-blue-100 rounded-full opacity-40 blur-3xl z-0" />
@@ -245,32 +190,44 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {coreValues.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={value.title}
-                  className="group relative bg-white/70 backdrop-blur-lg border border-gray-200 rounded-3xl shadow-xl p-8 flex items-start gap-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate-fade-in"
-                  style={{ animationDelay: `${0.2 + index * 0.15}s` }}
-                >
-                  {/* Animated, glowing icon */}
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 via-pink-300 to-blue-300 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-pink-200 transition-transform duration-300 animate-icon-pop">
-                    <Icon className="h-8 w-8 text-white drop-shadow-lg" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Values Content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {coreValues.map((value, index) => {
+                const Icon = value.icon;
+                return (
+                  <div
+                    key={value.title}
+                    className="group relative bg-white/70 backdrop-blur-lg border border-gray-200 rounded-3xl shadow-xl p-6 flex items-start gap-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate-fade-in"
+                    style={{ animationDelay: `${0.2 + index * 0.15}s` }}
+                  >
+                    {/* Animated, glowing icon */}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-yellow-300 via-pink-300 to-blue-300 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-pink-200 transition-transform duration-300 animate-icon-pop">
+                      <Icon className="h-6 w-6 text-white drop-shadow-lg" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground mb-2 tracking-tight">
+                        {value.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {value.description}
+                      </p>
+                    </div>
+                    {/* Accent border animation */}
+                    <span className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-yellow-400 via-pink-400 to-blue-400 rounded-l-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
-                      {value.title}
-                    </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                  {/* Accent border animation */}
-                  <span className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-yellow-400 via-pink-400 to-blue-400 rounded-l-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+            
+            {/* Right: Image */}
+            <div className="flex justify-center items-center">
+              <img
+                src="/images/our_core_values.webp"
+                alt="Our Core Values"
+                className="rounded-3xl shadow-2xl w-full max-w-2xl h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
         {/* Animations */}
@@ -291,6 +248,46 @@ export default function AboutPage() {
             animation: icon-pop 0.7s cubic-bezier(0.4,0,0.2,1) both;
           }
         `}</style>
+      </section>
+
+      {/* Board of Directors Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Meet Our Leadership
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Our Managing Director and Board of Directors
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <CircularTestimonials
+              testimonials={boardMembers.map(member => ({
+                quote: member.bio,
+                name: member.name,
+                designation: member.designation,
+                src: member.src,
+              }))}
+              autoplay={false}
+              colors={{
+                name: "#0a0a0a",
+                designation: "#454545",
+                testimony: "#171717",
+                arrowBackground: "#141414",
+                arrowForeground: "#f1f1f7",
+                arrowHoverBackground: "#00A6FB",
+              }}
+              fontSizes={{
+                name: "28px",
+                designation: "20px",
+                quote: "20px",
+              }}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Mother of Companies Section */}

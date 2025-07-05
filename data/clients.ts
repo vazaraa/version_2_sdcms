@@ -67,69 +67,56 @@ import Undavalli_Constructions_Mangalagiri from "@/public/images/private-sector/
 import SDC_Technologies_AP from "@/public/images/private-sector/SDC-Logo-RGB.jpg";
 
 export interface Client {
-  id: string;
   name: string;
-  logo: string;
-  industry: string;
-  testimonial?: string;
-  author?: string;
-  position?: string;
+  src: string;
+  alt: string;
 }
 
 export const clients: Client[] = [
   {
-    id: '1',
-    name: 'TechCorp Solutions',
-    logo: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg',
-    industry: 'Technology',
-    testimonial: 'SDC Management Solutions transformed our project delivery process. Their expertise in project management is unmatched.',
-    author: 'Sarah Johnson',
-    position: 'CTO, TechCorp Solutions'
+    name: "Cement Corporation of India, Tandur",
+    src: "/images/GOV-SECTOR/cci.jpg",
+    alt: "Cement Corporation of India Tandur"
   },
   {
-    id: '2',
-    name: 'Global Industries',
-    logo: 'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg',
-    industry: 'Manufacturing',
-    testimonial: 'Working with SDC has been a game-changer for our operations. Their strategic planning helped us achieve 25% growth.',
-    author: 'Michael Chen',
-    position: 'CEO, Global Industries'
+    name: "Greater Visakhapatnam Municipal Corporation, Visakhapatnam",
+    src: "/images/GOV-SECTOR/visakhapatanam municap corporation.jpg",
+    alt: "Greater Visakhapatnam Municipal Corporation"
   },
   {
-    id: '3',
-    name: 'Metro Health System',
-    logo: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg',
-    industry: 'Healthcare',
-    testimonial: 'The team at SDC delivered exceptional results in our digital transformation project. Highly recommended.',
-    author: 'Dr. Emily Rodriguez',
-    position: 'Chief Medical Officer'
+    name: "Polavaram Project Authority, Hyderabad",
+    src: "/images/GOV-SECTOR/PLAVARAMAUTHORITY.jpg",
+    alt: "Polavaram Project Authority Hyderabad"
   },
   {
-    id: '4',
-    name: 'EduTech Institute',
-    logo: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg',
-    industry: 'Education',
-    testimonial: 'SDC\'s consulting services helped us streamline our operations and improve student outcomes significantly.',
-    author: 'Robert Taylor',
-    position: 'Director of Operations'
+    name: "Endowments Department, Andhra Pradesh",
+    src: "/images/GOV-SECTOR/andhra-pradesh-endowments-department.jpg",
+    alt: "Endowments Department Andhra Pradesh"
   },
   {
-    id: '5',
-    name: 'Green Energy Corp',
-    logo: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg',
-    industry: 'Energy',
-    testimonial: 'Professional, reliable, and results-driven. SDC Management Solutions exceeded our expectations.',
-    author: 'Lisa Wang',
-    position: 'Project Manager'
+    name: "APMSIDC IT Park, Mangalagiri",
+    src: "/images/GOV-SECTOR/apmsidc.jpg",
+    alt: "APMSIDC IT Park Mangalagirl"
   },
   {
-    id: '6',
-    name: 'Urban Development Ltd',
-    logo: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg',
-    industry: 'Real Estate',
-    testimonial: 'Their expertise in urban planning and project management made our development project a huge success.',
-    author: 'David Kim',
-    position: 'Development Director'
+    name: "GGH Guntur",
+    src: "/images/GOV-SECTOR/GGH.jpg",
+    alt: "GGH Guntur"
+  },
+  {
+    name: "APCRDA Amaravathi",
+    src: "/images/GOV-SECTOR/apcrda.jpg",
+    alt: "APCRDA Amaravthi"
+  },
+  {
+    name: "Military Engineer Services, Secunderabad",
+    src: "/images/GOV-SECTOR/MES-Military-Engineer-Services-logo.jpg",
+    alt: "Military Engineer Services Secunderabad"
+  },
+  {
+    name: "Tobacco Board, AP",
+    src: "/images/GOV-SECTOR/tobocco board.jpg",
+    alt: "Tobacco Board AP"
   }
 ];
 
@@ -200,4 +187,24 @@ export const privateClients = [
   { src: SV_ENVIRO_INFRASTRUCTURE_PVT_LTD_AP, alt: "SV Enviro Infrastructure Pvt Ltd AP" },
   { src: Undavalli_Constructions_Mangalagiri, alt: "Undavalli Constructions Mangalagiri" },
   { src: SDC_Technologies_AP, alt: "SDC Technologies AP" }
+];
+
+// Helper to add a name field to private clients
+const privateClientsWithName = [
+  { name: 'Transgraph Consulting Services AP', ...privateClients[0] },
+  { name: 'Loyola Market Research', ...privateClients[1] },
+  { name: 'CRP Risk Management AP TS', ...privateClients[2] },
+  { name: 'ARC Attest', ...privateClients[3] },
+  { name: 'UTI Infrastructure Services AP TS', ...privateClients[4] },
+  { name: 'Shaadi.com', ...privateClients[5] },
+  { name: 'HDB Financial Services', ...privateClients[6] },
+  { name: 'Innovsource', ...privateClients[7] },
+  { name: 'CENTRO', ...privateClients[8] },
+  { name: 'Medicity Hospital Hyderabad', ...privateClients[9] },
+  // add more if needed
+];
+
+export const homepageClients = [
+  ...governmentClients.slice(0, 10).map(c => ({ name: c.alt, src: c.src, alt: c.alt })),
+  ...privateClientsWithName.slice(0, 10)
 ];

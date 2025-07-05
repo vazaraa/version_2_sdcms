@@ -65,7 +65,7 @@ export default function VIPVazraa() {
           Our goal is to stay ahead of market trends and adapt to the evolving needs of our customers. We continuously upgrade our systems and practices to ensure that our products meet international quality standards and fulfill the expectations of both domestic and global markets.
         </p>
         <p className="text-gray-700 dark:text-gray-300 text-lg">
-          At VIP VAZRAA, we don't just sell spices — we deliver trust, purity, and a taste of tradition.
+          At VIP VAZRAA, we don&apos;t just sell spices — we deliver trust, purity, and a taste of tradition.
         </p>
       </section>
     </div>
