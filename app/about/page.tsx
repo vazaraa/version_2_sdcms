@@ -25,6 +25,7 @@ import AboutMotherCompanies from '@/components/AboutMotherCompanies';
 import Lottie from 'lottie-react';
 import { CircularTestimonials } from '@/components/ui/circular-testimonials';
 import { testimonials, boardMembers } from '@/data/testimonials';
+import animationData from '@/lotti/Animation - 1751871345994.json';
 
 export default function AboutPage() {
   const containerRef = useGSAP();
@@ -119,6 +120,10 @@ export default function AboutPage() {
       color: 'bg-red-500'
     }
   ];
+
+  const [leaderIndex, setLeaderIndex] = React.useState(0);
+  const prevLeader = () => setLeaderIndex((i) => (i === 0 ? boardMembers.length - 1 : i - 1));
+  const nextLeader = () => setLeaderIndex((i) => (i === boardMembers.length - 1 ? 0 : i + 1));
 
   return (
     <div ref={containerRef} className="min-h-screen">
@@ -250,42 +255,70 @@ export default function AboutPage() {
         `}</style>
       </section>
 
-      {/* Board of Directors Section */}
-      <section className="py-20 bg-muted/30">
+      {/* Leadership Section with Lottie Animation */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Meet Our Leadership
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Our Managing Director and Board of Directors
-              </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-x-16 gap-y-10 w-full">
+            {/* Left: Lottie Animation (larger) */}
+            <div className="flex-1 flex justify-center items-center min-w-[320px]">
+              <div className="w-[38rem] h-[38rem] max-w-full flex items-center justify-center">
+                <Lottie animationData={animationData} loop={true} />
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center">
-            <CircularTestimonials
-              testimonials={boardMembers.map(member => ({
-                quote: member.bio,
-                name: member.name,
-                designation: member.designation,
-                src: member.src,
-              }))}
-              autoplay={false}
-              colors={{
-                name: "#0a0a0a",
-                designation: "#454545",
-                testimony: "#171717",
-                arrowBackground: "#141414",
-                arrowForeground: "#f1f1f7",
-                arrowHoverBackground: "#00A6FB",
-              }}
-              fontSizes={{
-                name: "28px",
-                designation: "20px",
-                quote: "20px",
-              }}
-            />
+            {/* Right: Content (centered and max width) */}
+            <div className="flex-1 flex flex-col justify-center max-w-2xl w-full self-center px-4">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 text-left">{boardMembers[leaderIndex].name}</h2>
+              <h3 className="text-2xl text-primary font-semibold mb-6 text-left">{boardMembers[leaderIndex].designation}</h3>
+              {boardMembers[leaderIndex].name === 'Mr. Venkat' ? (
+                <div className="space-y-4 text-left">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary">Meet the Director</h2>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Mr. Venkat</h3>
+                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                    Founder of Sri Durga Consultancy Services and Managing Director of SDC Management Solutions Pvt. Ltd., Vazrashri Industries Pvt. Ltd., and Sri Durga Consultancy Services.
+                  </p>
+                  <div className="space-y-2">
+                    <p>🎓 <strong>Education:</strong> B Pharmacy, Computing, and Business Administration</p>
+                    <p>🌍 <strong>Born:</strong> Andhra Pradesh, 1986</p>
+                    <p>💼 <strong>Experience:</strong> Over a decade in financial management and leadership</p>
+                    <p>👥 <strong>Team:</strong> 3600+ employees across South India</p>
+                    <p>🌱 <strong>Focus Areas:</strong> E-Commerce, Food, Construction, Employment Services, Entertainment, Manufacturing</p>
+                    <p>🧠 <strong>Vision:</strong> Realistic, process-driven strategies aligned with sustainable growth</p>
+                  </div>
+                  <p className="text-md italic text-gray-600 dark:text-gray-400">
+                    “Together, we're not just building businesses—we're shaping a brighter, more sustainable future.”
+                  </p>
+                </div>
+              ) : boardMembers[leaderIndex].name === 'E. Venkateswalu' ? (
+                <div className="space-y-4 text-left">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary">Meet the Director</h2>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Mr. E. Venkateswarlu</h3>
+                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                    Director of SDC Management Solutions Pvt. Ltd. and Co-Founder of Vazrashri Industries Pvt. Ltd.,
+                    Mr. Venkateswarlu brings a decade of expertise in administration, accounting, and recruitment.
+                    His leadership continues to empower thousands across South India with visionary business strategies.
+                  </p>
+                  <div className="space-y-2">
+                    <p>🎓 <strong>Education:</strong> Bachelor of Engineering, Master of Business Administration</p>
+                    <p>🌍 <strong>Born:</strong> Andhra Pradesh (now Telangana), 1990</p>
+                    <p>💼 <strong>Experience:</strong> 10+ years in financial management and leadership</p>
+                    <p>👥 <strong>Team:</strong> 2000+ employees across South India</p>
+                    <p>🌱 <strong>Focus Areas:</strong> E-Commerce, Food, Construction, Employment Services, Entertainment, Manufacturing</p>
+                    <p>🧠 <strong>Vision:</strong> Visionary business strategies for empowering youth and building diverse employment platforms</p>
+                    <p>🏢 <strong>Roles:</strong> Admin & Accounts Lead at Sri Durga Consultancy Services (2013–2020); Director at SDC Management Solutions Pvt. Ltd. (2020–Present)</p>
+                    <p>🤝 <strong>Co-Founding Support:</strong> Vazrashri Industries Pvt. Ltd. established with guidance from Mr. B. Venkanna</p>
+                  </div>
+                  <p className="text-md italic text-gray-600 dark:text-gray-400">
+                    “Our mission is to create impactful opportunities and empower youth across India by building diverse employment platforms.”
+                  </p>
+                </div>
+              ) : (
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-left">{boardMembers[leaderIndex].bio}</p>
+              )}
+              <div className="flex gap-4 mt-2">
+                <button onClick={prevLeader} className="w-14 h-14 rounded-full bg-muted flex items-center justify-center text-3xl hover:bg-primary hover:text-white transition">&#8592;</button>
+                <button onClick={nextLeader} className="w-14 h-14 rounded-full bg-muted flex items-center justify-center text-3xl hover:bg-primary hover:text-white transition">&#8594;</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

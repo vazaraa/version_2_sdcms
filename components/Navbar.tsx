@@ -30,6 +30,7 @@ import {
   Wrench,
   ClipboardList
 } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,8 +86,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
-              <Building2 className="h-6 w-6" />
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white group-hover:scale-105 transition-transform overflow-hidden">
+              <Image src="/images/logo.webp" alt="SDC Logo" width={36} height={36} className="object-contain w-9 h-9" />
             </div>
             <div>
               <span className="font-bold text-xl text-foreground">SDC</span>
