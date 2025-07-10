@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useGSAP } from '@/hooks/useGSAP';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
+import React from "react";
+import { useGSAP } from "@/hooks/useGSAP";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
   Send,
   Building2,
   Users,
   MessageSquare,
-  Globe
-} from 'lucide-react';
+  Globe,
+} from "lucide-react";
 
 export default function ContactPage() {
   const containerRef = useGSAP();
@@ -24,64 +24,52 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Our Location',
+      title: "Our Location",
       details: [
-        '123 Business District',
-        'Corporate Tower, Floor 15',
-        'Mumbai, Maharashtra 400001',
-        'India'
-      ]
+        "Vidya Nagar 1st Lane, Guntur - 522007, Andhra Pradesh",
+        "India",
+      ],
     },
     {
       icon: Phone,
-      title: 'Phone Numbers',
-      details: [
-        '+91 22 1234 5678',
-        '+91 22 8765 4321',
-        'Toll Free: 1800 123 4567'
-      ]
+      title: "Phone Numbers",
+      details: ["9985263111, ", "8099770055", "Land Line: 0863-2214444"],
     },
     {
       icon: Mail,
-      title: 'Email Addresses',
-      details: [
-        'info@sdcmanagement.com',
-        'careers@sdcmanagement.com',
-        'support@sdcmanagement.com'
-      ]
+      title: "Email Addresses",
+      details: ["info@sdcms.com"],
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      details: [
-        'Monday - Friday: 9:00 AM - 6:00 PM',
-        'Saturday: 9:00 AM - 2:00 PM',
-        'Sunday: Closed'
-      ]
-    }
+      title: "Business Hours",
+      details: ["Monday - Friday: 9:30 AM - 6:30 PM", "Sunday: Closed"],
+    },
   ];
 
   const offices = [
     {
-      city: 'Head Office - Guntur',
-      address: 'Vidya Nagar 1st Lane, Guntur - 522007, Andhra Pradesh'
+      city: "Head Office - Guntur",
+      address: "Vidya Nagar 1st Lane, Guntur - 522007, Andhra Pradesh",
     },
     {
-      city: 'Visakhapatnam',
-      address: '39-33-9/2, Vuda Layout, Plot Mig 328, Varma Complex, Murali Nagar, Visakhapatnam, Andhra Pradesh 530007'
+      city: "Visakhapatnam",
+      address:
+        "39-33-9/2, Vuda Layout, Plot Mig 328, Varma Complex, Murali Nagar, Visakhapatnam, Andhra Pradesh 530007",
     },
     {
-      city: 'Hyderabad',
-      address: '3-12-8/a, above SBI bank, 2nd floor, Ganesh nagar, Ramanthapur, Hyderabad - 500013.'
+      city: "Hyderabad",
+      address:
+        "3-12-8/a, above SBI bank, 2nd floor, Ganesh nagar, Ramanthapur, Hyderabad - 500013.",
     },
     {
-      city: 'Bangalore',
-      address: 'Kumbalgodu, near raja rajeshwari College, Bangalore - 560074.'
+      city: "Bangalore",
+      address: "Kumbalgodu, near raja rajeshwari College, Bangalore - 560074.",
     },
     {
-      city: 'Delhi',
-      address: 'WZ-9, 2nd Floor, Tatarpur, Tagore Garden, New Delhi - 110027'
-    }
+      city: "Delhi",
+      address: "WZ-9, 2nd Floor, Tatarpur, Tagore Garden, New Delhi - 110027",
+    },
   ];
 
   return (
@@ -95,8 +83,9 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Ready to transform your business? Let's start a conversation about 
-                how we can help you achieve your goals and drive sustainable growth.
+                Ready to transform your business? Let's start a conversation
+                about how we can help you achieve your goals and drive
+                sustainable growth.
               </p>
             </div>
           </div>
@@ -110,7 +99,10 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <Card key={index} className="scale-in text-center hover:shadow-lg transition-shadow duration-300">
+                <Card
+                  key={index}
+                  className="scale-in text-center hover:shadow-lg transition-shadow duration-300"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 text-primary">
                       <Icon className="h-8 w-8" />
@@ -193,7 +185,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Message *
                       </label>
-                      <Textarea 
+                      <Textarea
                         placeholder="Tell us about your project or inquiry..."
                         rows={5}
                       />
@@ -236,21 +228,27 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium text-foreground">Call Us</p>
-                        <p className="text-sm text-muted-foreground">+91 22 1234 5678</p>
+                        <p className="text-sm text-muted-foreground">
+                          9985263111, 8099770055 Land Line: 0863-2214444
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Mail className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium text-foreground">Email Us</p>
-                        <p className="text-sm text-muted-foreground">info@sdcmanagement.com</p>
+                        <p className="text-sm text-muted-foreground">
+                          info@sdcms.in
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
                       <MessageSquare className="h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium text-foreground">Live Chat</p>
-                        <p className="text-sm text-muted-foreground">Available 9 AM - 6 PM</p>
+                        <p className="text-sm text-muted-foreground">
+                          Available 9 AM - 6 PM
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -265,16 +263,26 @@ export default function ContactPage() {
                   </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Email Inquiries</span>
-                      <span className="font-medium text-foreground">24 hours</span>
+                      <span className="text-muted-foreground">
+                        Email Inquiries
+                      </span>
+                      <span className="font-medium text-foreground">
+                        24 hours
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Phone Calls</span>
-                      <span className="font-medium text-foreground">Immediate</span>
+                      <span className="font-medium text-foreground">
+                        Immediate
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Project Proposals</span>
-                      <span className="font-medium text-foreground">2-3 days</span>
+                      <span className="text-muted-foreground">
+                        Project Proposals
+                      </span>
+                      <span className="font-medium text-foreground">
+                        2-3 days
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -293,15 +301,19 @@ export default function ContactPage() {
                 Our Office Locations
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                With offices across major cities in India, we're always close to our clients 
-                and ready to provide personalized service and support.
+                With offices across major cities in India, we're always close to
+                our clients and ready to provide personalized service and
+                support.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {offices.map((office, index) => (
-              <Card key={index} className="scale-in hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="scale-in hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
@@ -311,7 +323,7 @@ export default function ContactPage() {
                       {office.city}
                     </h3>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-start space-x-2">
                       <MapPin className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />

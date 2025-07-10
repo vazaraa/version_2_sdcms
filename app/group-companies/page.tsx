@@ -1,6 +1,7 @@
 import React from "react";
 import { companies } from "@/data/companies";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GroupCompaniesPage() {
   return (
@@ -9,6 +10,15 @@ export default function GroupCompaniesPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {companies.map((company) => (
           <div key={company.id} className="bg-white rounded-lg shadow-md p-6">
+            <div className="mb-4 flex justify-center items-center h-48">
+              <Image
+                src={company.image}
+                alt={company.name}
+                width={300}
+                height={200}
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </div>
             <h2 className="text-2xl font-bold mb-4">{company.name}</h2>
             <p className="text-gray-600 mb-4">{company.description}</p>
             <Link 

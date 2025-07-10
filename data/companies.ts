@@ -46,7 +46,7 @@ export const companies: Company[] = [
     ],
     slug: 'sri-durga-consultancy-services',
     icon: 'Target',
-    image: 'https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg',
+    image: '/images/services/construction-bg.webp',
     color: 'bg-blue-500'
   },
   {
@@ -80,7 +80,7 @@ export const companies: Company[] = [
     ],
     slug: 'sdc-management-solutions-pvt-ltd',
     icon: 'Building2',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+    image: '/images/companies/sdcms.jpg',
     color: 'bg-green-500'
   },
   {
@@ -114,7 +114,7 @@ export const companies: Company[] = [
     ],
     slug: 'vazrashri-industries-pvt-ltd',
     icon: 'Settings',
-    image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg',
+    image: '/images/companies/vipvazraa.jpg',
     color: 'bg-purple-500'
   },
   {
@@ -148,7 +148,7 @@ export const companies: Company[] = [
     ],
     slug: 'click-pic',
     icon: 'ShoppingCart',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg',
+    image: '/images/companies/Untitled.jpg',
     color: 'bg-orange-500'
   },
   {
@@ -182,7 +182,7 @@ export const companies: Company[] = [
     ],
     slug: 'urban-expert',
     icon: 'Home',
-    image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg',
+    image: '/images/companies/urbanexpert.jpg',
     color: 'bg-teal-500'
   }
 ];

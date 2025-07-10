@@ -111,15 +111,16 @@ const CompaniesPreview = () => {
               </div>
 
               {/* Right: Image & Badges */}
-              <div className="relative w-full h-[60vh] rounded-md shadow-lg bg-muted overflow-hidden">
+              <div className="relative w-full h-[60vh] flex justify-center items-center rounded-md shadow-lg bg-muted overflow-hidden">
                 <Image
                   src={company.image}
                   alt={`Image of ${company.name}`}
-                  className="object-cover w-full h-full"
+                  className="object-contain flex justify-center max-h-[80%] max-w-[80%] bg-red-500"
                   width={800}
                   height={800}
                 />
-                <div className="absolute top-4 left-4">
+                
+                <div className="absolute top-4 left-4" >
                   <div
                     className={`flex items-center justify-center w-10 h-10 rounded-full ${company.color} text-white`}
                   >

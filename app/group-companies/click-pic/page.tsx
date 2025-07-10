@@ -1,5 +1,6 @@
 import React from "react";
 import { ShoppingCart, MapPin, Package, Globe, Handshake } from "lucide-react";
+import Image from "next/image";
 
 export default function ClickPic() {
   return (
@@ -14,6 +15,15 @@ export default function ClickPic() {
 
       {/* About Us Section */}
       <section className="max-w-3xl mx-auto py-10 px-4">
+        <div className="flex justify-center items-center h-60 mb-6">
+          <Image
+            src="/images/companies/Untitled.jpg"
+            alt="Click Pic"
+            width={400}
+            height={300}
+            className="rounded-xl shadow-lg w-full h-full object-contain"
+          />
+        </div>
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-pink-900 dark:text-pink-200 flex items-center gap-2">
           <span role="img" aria-label="about">🔴</span> About Us
         </h2>

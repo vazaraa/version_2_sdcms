@@ -5,11 +5,11 @@ export default function UrbanExpert() {
     <div className="container mx-auto py-12">
       <div className="flex flex-col md:flex-row gap-8 items-center">
         <Image
-          src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg"
+          src="/images/companies/urbanexpert.jpg"
           alt="Urban Expert"
           width={400}
           height={400}
-          className="rounded-lg shadow-lg object-cover"
+          className="rounded-lg shadow-lg w-full h-60 object-contain"
         />
         <div>
           <h1 className="text-4xl font-bold mb-4">Urban Expert</h1>

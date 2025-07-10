@@ -1,5 +1,6 @@
 import React from "react";
 import { Users, Briefcase, FileText, ClipboardList, Laptop, Factory, ShoppingCart, Stethoscope, Truck, GraduationCap } from "lucide-react";
+import Image from "next/image";
 
 export default function SDCManagementSolutions() {
   return (
@@ -57,8 +58,14 @@ export default function SDCManagementSolutions() {
             <li>Data-secure and cloud-based payroll systems</li>
           </ul>
         </div>
-        <div className="flex justify-center">
-          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&w=600" alt="Why Choose Us" className="rounded-xl shadow-lg w-full max-w-xs md:max-w-sm object-cover" />
+        <div className="flex justify-center items-center h-60">
+          <Image 
+            src="/images/companies/sdcms.jpg" 
+            alt="SDC Management Solutions" 
+            width={400}
+            height={300}
+            className="rounded-xl shadow-lg w-full h-full object-contain" 
+          />
         </div>
       </section>
 
