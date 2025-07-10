@@ -1,43 +1,43 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { 
-  Building2, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
+import React from "react";
+import Link from "next/link";
+import {
+  Building2,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
   Facebook,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    'Government Outsourcing',
-    'Project Management',
-    'Business Consulting',
-    'Strategic Planning'
+    "Government Outsourcing",
+    "Project Management",
+    "Business Consulting",
+    "Strategic Planning",
   ];
 
   const companies = [
-    'Sri Durga Consulting Services',
-    'Urban Expert',
-    'Agro Expert',
-    'IT Expert',
-    'Edu Expert',
-    'Health Expert'
+    "Sri Durga Consulting Services",
+    "Urban Expert",
+    "Agro Expert",
+    "IT Expert",
+    "Edu Expert",
+    "Health Expert",
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' }
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -53,21 +53,33 @@ const Footer = () => {
               </div>
               <div>
                 <span className="font-bold text-xl">SDC</span>
-                <span className="text-sm text-muted-foreground block -mt-1">Management Solutions</span>
+                <span className="text-sm text-muted-foreground block -mt-1">
+                  Management Solutions
+                </span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Excellence in business management and consulting services. We deliver innovative solutions 
-              that drive growth and success for our clients across various industries.
+              Excellence in business management and consulting services. We
+              deliver innovative solutions that drive growth and success for our
+              clients across various industries.
             </p>
             <div className="flex space-x-3">
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </Link>
             </div>
@@ -79,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center group"
                   >
@@ -97,7 +109,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <Link 
+                  <Link
                     href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center group"
                   >
@@ -116,16 +128,18 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">
-                  [Your Full Company Address]
+                  Vidya Nagar 1st Lane, Guntur - 522007, Andhra Pradesh
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">+91-XXXXXXXXXX</p>
+                <p className="text-muted-foreground text-sm">
+                  9985263111, 8099770055 Land Line: 0863-2214444
+                </p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">info@sdcs.com</p>
+                <p className="text-muted-foreground text-sm">info@sdcms.in</p>
               </div>
             </div>
           </div>
@@ -138,13 +152,22 @@ const Footer = () => {
               © {currentYear} SDC Management Solutions. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary text-sm transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary text-sm transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary text-sm transition-colors"
+              >
                 Cookie Policy
               </Link>
             </div>

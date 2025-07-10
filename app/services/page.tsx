@@ -36,6 +36,19 @@ export default function ServicesPage() {
     }
   };
 
+  // Only show services that are in the navbar dropdown
+  const allowedSlugs = [
+    'government-and-outsourcing',
+    'recruitment-and-staffing-solutions',
+    'construction',
+    'mining-raw-materials',
+    'security-services',
+    'housekeeping-services',
+    'training-and-development',
+    'survey',
+  ];
+  const filteredServices = services.filter(service => allowedSlugs.includes(service.slug));
+
   return (
     <div ref={containerRef} className="min-h-screen">
       {/* Hero Section */}
@@ -59,7 +72,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
+            {filteredServices.map((service, index) => {
               const Icon = getIcon(service.icon);
               return (
                 <Card key={service.id} className="scale-in hover:shadow-xl transition-shadow duration-300 h-full">
