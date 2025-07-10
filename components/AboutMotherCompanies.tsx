@@ -5,27 +5,27 @@ const companies = [
   {
     name: 'SDCMS Pvt ltd',
     subtitle: 'In Time Every Time',
-    img: '/images/logo.png',
+    img: '/images/companies/sdcms.jpg',
   },
   {
     name: 'Vazrashree industries Pvt Ltd',
     subtitle: '',
-    img: '/images/private-sector/arc.webp', // Placeholder, update if you have the real logo
+    img: '/images/companies/vipvazraa.jpg',
   },
   {
     name: 'Urban Expert',
     subtitle: '(Urban Services)',
-    img: '', // Placeholder, update if you have the real logo
+    img: '/images/companies/urbanexpert.jpg',
   },
   {
     name: 'SRI DURGA CONSTRUCTIONS',
     subtitle: 'IN TIME, EVERY TIME',
-    img: '/images/private-sector/SDC-Logo-RGB.webp',
+    img: '/images/companies/sdcms.jpg',
   },
   {
     name: 'Click Pic',
     subtitle: '(E-Commerce)',
-    img: '', // Placeholder, update if you have the real logo
+    img: '/images/companies/Untitled.jpg',
   },
 ];
 
