@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import { RetroGrid } from "@/components/ui/retro-grid";
-import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+const RetroGrid = React.lazy(() => import('@/components/ui/retro-grid').then(m => ({ default: m.RetroGrid })));
+const ContainerTextFlip = React.lazy(() => import('@/components/ui/container-text-flip').then(m => ({ default: m.ContainerTextFlip })));
 
 const services = [
   {
@@ -44,10 +44,6 @@ const services = [
 const Hero = () => {
   return (
     <section className="relative w-full flex flex-col items-center justify-center pt-16 pb-10 px-0 overflow-hidden min-h-[700px]">
-      {/* Retro Grid Background */}
-      <div className="absolute inset-0 z-0">
-        <RetroGrid />
-      </div>
       
       {/* Radial background overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none w-full h-full">
@@ -64,13 +60,15 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center items-center gap-2 text-xl md:text-2xl font-semibold text-gray-700 mb-6">
           <span>Empowering organizations with</span>
           <span>
-            <ContainerTextFlip
-              words={["consulting", "staffing", "compliance", "industrial solutions"]}
-              wordColors={["#2563eb", "#f59e42", "#ef4444", "#059669"]}
-              className="inline bg-transparent shadow-none p-0"
-              textClassName="text-inherit font-inherit"
-              animationDuration={900}
-            />
+            <Suspense fallback={<span>...</span>}>
+              <ContainerTextFlip
+                words={["consulting", "staffing", "compliance", "industrial solutions"]}
+                wordColors={["#2563eb", "#f59e42", "#ef4444", "#059669"]}
+                className="inline bg-transparent shadow-none p-0"
+                textClassName="text-inherit font-inherit"
+                animationDuration={900}
+              />
+            </Suspense>
           </span>
           <span>for sustainable growth and success.</span>
         </div>
@@ -90,6 +88,7 @@ const Hero = () => {
                   className="object-cover rounded-t-2xl"
                   sizes="220px"
                   priority={idx < 2}
+                  loading={idx < 2 ? undefined : 'lazy'}
                 />
                 {service.label && (
                   <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded font-semibold shadow">
