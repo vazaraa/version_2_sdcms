@@ -87,9 +87,9 @@ export default function CareersPage() {
     },
     {
       id: "5",
-      title: "Business Development Manager",
+      title: "Business Development Manager(freelancer)",
       department: "Facility Management ",
-      location: "Hyderabad, Bangalore, Chennai, Vijayawada",
+      location: "Hyderabad, Bangalore, Chennai, Delhi ,Pune,Visakhapatnam,Tirupati",
       type: "Full-time",
       experience: "0–1 year",
       description:
