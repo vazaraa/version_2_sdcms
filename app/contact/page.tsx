@@ -252,6 +252,15 @@ export default function ContactPage() {
                         </p>
                       </div>
                     </div>
+                     <div className="flex items-center space-x-3">
+                      <MessageSquare className="h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium text-foreground">for job enquiry</p>
+                        <p className="text-sm text-muted-foreground">
+                          +91 99856 24111
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

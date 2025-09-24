@@ -1,178 +1,226 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useGSAP } from '@/hooks/useGSAP';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight, Briefcase, MapPin, Clock, Users, Award, GraduationCap, Upload } from 'lucide-react';
+import React, { useState } from "react";
+import Link from "next/link";
+import { useGSAP } from "@/hooks/useGSAP";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  ArrowRight,
+  Briefcase,
+  MapPin,
+  Clock,
+  Users,
+  Award,
+  GraduationCap,
+  Upload,
+} from "lucide-react";
 
 export default function CareersPage() {
   const containerRef = useGSAP();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
 
   const scrollToApplyForm = () => {
-    const applyForm = document.getElementById('apply-form');
+    const applyForm = document.getElementById("apply-form");
     if (applyForm) {
-      applyForm.scrollIntoView({ behavior: 'smooth' });
+      applyForm.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const jobOpenings = [
+    // {
+    //   id: "1",
+    //   title: "Accountant – Guntur",
+    //   department: "",
+    //   location: "Guntur",
+    //   type: "Full-time",
+    //   experience: "Minimum 2 years",
+    //   description: "Proficiency in GST, Tally, Excel, TDS, and IT Returns.",
+    //   requirements: [
+    //     "Proficiency in GST",
+    //     "Proficiency in Tally",
+    //     "Proficiency in Excel",
+    //     "Proficiency in TDS",
+    //     "Proficiency in IT Returns",
+    //   ],
+    //   responsibilities: [],
+    // },
     {
-      id: '1',
-      title: 'Accountant – Guntur',
-      department: '',
-      location: 'Guntur',
-      type: 'Full-time',
-      experience: 'Minimum 2 years',
-      description: 'Proficiency in GST, Tally, Excel, TDS, and IT Returns.',
-      requirements: [
-        'Proficiency in GST',
-        'Proficiency in Tally',
-        'Proficiency in Excel',
-        'Proficiency in TDS',
-        'Proficiency in IT Returns'
-      ],
-      responsibilities: []
+      id: "2",
+      title: "Accountant – Hyderabad",
+      department: "Accounts",
+      location: "Hyderabad",
+      type: "Full-time",
+      experience: "Minimum 2 years",
+      description: "Hands-on experience with Tally ERP.",
+      requirements: ["Hands-on experience with Tally ERP"],
+      responsibilities: [],
     },
     {
-      id: '2',
-      title: 'Accountant – Hyderabad',
-      department: '',
-      location: 'Hyderabad',
-      type: 'Full-time',
-      experience: 'Minimum 2 years',
-      description: 'Hands-on experience with Tally ERP.',
+      id: "3",
+      title: "Store Executive",
+      department: "Sales  & Marketing",
+      location: "Hyderabad",
+      type: "Full-time",
+      experience: "1–2 years",
+      description:
+        "Good communication skills, basic computer knowledge, and a background in sales.",
       requirements: [
-        'Hands-on experience with Tally ERP'
+        "Good communication skills",
+        "Basic computer knowledge",
+        "Background in sales",
       ],
-      responsibilities: []
+      responsibilities: [],
     },
     {
-      id: '3',
-      title: 'Store Executive',
-      department: '',
-      location: '',
-      type: 'Full-time',
-      experience: '1–2 years',
-      description: 'Good communication skills, basic computer knowledge, and a background in sales.',
-      requirements: [
-        'Good communication skills',
-        'Basic computer knowledge',
-        'Background in sales'
-      ],
-      responsibilities: []
+      id: "4",
+      title: "Sales Executive",
+      department: "Sales  & Marketing",
+      location: "Visakhapatnam, Hyderabad, Rajahmundry",
+      type: "Full-time",
+      experience: "1–2 years in FMCG sales",
+      description: "Proven experience in field sales within the FMCG sector.",
+      requirements: ["Proven experience in field sales within the FMCG sector"],
+      responsibilities: [],
     },
     {
-      id: '4',
-      title: 'Sales Executive',
-      department: '',
-      location: '',
-      type: 'Full-time',
-      experience: '1–2 years in FMCG sales',
-      description: 'Proven experience in field sales within the FMCG sector.',
+      id: "5",
+      title: "Business Development Manager",
+      department: "Facility Management ",
+      location: "Hyderabad, Bangalore, Chennai, Vijayawada",
+      type: "Full-time",
+      experience: "0–1 year",
+      description:
+        "The Business Development Manager is responsible for driving business growth for the Facility Management division by generating new clients and maintaining strong relationships. The role focuses on understanding client requirements for housekeeping and security manpower, preparing quotations, and finalizing service contracts.",
       requirements: [
-        'Proven experience in field sales within the FMCG sector'
+        "Identify and generate leads across industries such as MNCs, hotels, factories, and corporate offices",
+        "Conduct client visits, understand requirements, and provide customized facility management solutions",
+        "Prepare quotations for housekeeping and security staff",
+        "Negotiate terms, finalize contracts, and onboard clients",
+        "Maintain healthy client relationships and ensure long-term business growth",
+        "Collaborate with the operations team for smooth execution of services",
+        "Achieve assigned sales targets and contribute to revenue growth",
       ],
-      responsibilities: []
+
+      responsibilities: [
+        "Any graduation",
+        "2–5 years of proven experience in business development (preferably in facility management)",
+        "Excellent communication, negotiation, and presentation skills",
+        "Strong client relationship management abilities",
+        "Target-oriented and willing to travel extensively",
+      ],
     },
     {
-      id: '5',
-      title: 'Tender Executive',
-      department: '',
-      location: '',
-      type: 'Full-time',
-      experience: '0–1 year',
-      description: 'Any graduate. Good communication skills, basic computer knowledge, proficiency in English (spoken and written).',
+      id: "6",
+      title: "Skill Development Trainer",
+      department: "Skill Development",
+      location: "Hyderabad",
+      type: "Full-time",
+      experience: "0–1 year",
+      description:
+        "We are looking for an enthusiastic and skilled Trainer to deliver high-quality training sessions that enhance the employability and professional skills of students, professionals, and community participants. The Trainer will focus on soft skills, communication, job readiness, and other relevant areas to support participants in achieving their career goals.",
       requirements: [
-        'Any graduate',
-        'Good communication skills',
-        'Basic computer knowledge',
-        'Proficiency in English (spoken and written)'
+        "Deliver engaging and interactive training sessions on soft skills, communication, job readiness, and other employability skills.",
+        "Design and implement effective training modules tailored to participant needs.",
+        "Assess participants through activities, assignments, and evaluations.",
+        "Track and report participant attendance, performance, and learning outcomes.",
+        "Provide career guidance, counseling, and support to participants for skill application and job readiness.",
+        "Collaborate with the coordinator and other stakeholders to ensure smooth execution of training programs.",
       ],
-      responsibilities: []
-    }
+      responsibilities: [
+        "Bachelor’s degree in any discipline.",
+        "1–3 years of experience in training or facilitation, preferably in skill development programs",
+        "Strong communication and presentation skills.",
+        "Ability to engage and motivate youth.",
+        "Basic proficiency in MS Office.",
+      ],
+    },
   ];
 
   const internships = [
+    // {
+    //   id: '1',
+    //   title: 'Junior Web & App Developer Intern',
+    //   duration: '6 months',
+    //   location: 'Guntur (On-site)',
+    //   description: 'Full-time, on-site internship providing real-world project exposure in website and mobile app development.',
+    //   requirements: [
+    //     'Final-year students or recent graduates in Computer Science, IT, or related disciplines',
+    //     'Portfolio or GitHub profile is a plus (not mandatory)',
+    //     'Knowledge of HTML, CSS, JavaScript, and frameworks like React or Flutter',
+    //     'Understanding of backend integrations using Firebase, PHP, or Node.js'
+    //   ]
+    // },
+    // {
+    //   id: '2',
+    //   title: 'E-Commerce Executive Intern',
+    //   duration: '6 months',
+    //   location: 'Guntur (On-site)',
+    //   description: 'Dynamic and detail-oriented role to support digital retail operations with practical experience in managing online listings, order processing, and customer service.',
+    //   requirements: [
+    //     'Graduate or final-year student in Commerce, Business, or related fields',
+    //     'Familiarity with e-commerce platforms is a plus',
+    //     'Basic knowledge of Excel and digital marketing tools desirable',
+    //     'Strong communication and organizational skills'
+    //   ]
+    // },
     {
-      id: '1',
-      title: 'Junior Web & App Developer Intern',
-      duration: '6 months',
-      location: 'Guntur (On-site)',
-      description: 'Full-time, on-site internship providing real-world project exposure in website and mobile app development.',
+      id: "3",
+      title: "Recruiting Intern (HR)",
+      duration: "6 months",
+      location: "Guntur (On-site)",
+      description:
+        "Support the Human Resources team in end-to-end recruitment with valuable exposure to HR operations, hiring workflows, and talent acquisition strategies.",
       requirements: [
-        'Final-year students or recent graduates in Computer Science, IT, or related disciplines',
-        'Portfolio or GitHub profile is a plus (not mandatory)',
-        'Knowledge of HTML, CSS, JavaScript, and frameworks like React or Flutter',
-        'Understanding of backend integrations using Firebase, PHP, or Node.js'
-      ]
+        "MBA (HR) students or recent graduates preferred",
+        "Strong communication and organizational skills",
+        "Familiarity with job portals like Naukri, Indeed, etc., is a plus",
+        "Attention to detail and ability to maintain candidate databases",
+      ],
     },
     {
-      id: '2',
-      title: 'E-Commerce Executive Intern',
-      duration: '6 months',
-      location: 'Guntur (On-site)',
-      description: 'Dynamic and detail-oriented role to support digital retail operations with practical experience in managing online listings, order processing, and customer service.',
+      id: "4",
+      title: "Tender Executive Intern",
+      duration: "6 months",
+      location: "Guntur (On-site)",
+      description:
+        "Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.",
       requirements: [
-        'Graduate or final-year student in Commerce, Business, or related fields',
-        'Familiarity with e-commerce platforms is a plus',
-        'Basic knowledge of Excel and digital marketing tools desirable',
-        'Strong communication and organizational skills'
-      ]
+        "Students or graduates in Business Administration, Commerce, or relevant fields",
+        "Basic understanding of government procurement/tendering process preferred (not mandatory)",
+        "Strong attention to detail and MS Office skills",
+        "Ability to coordinate with cross-functional teams",
+      ],
     },
-    {
-      id: '3',
-      title: 'Recruiting Intern (HR)',
-      duration: '6 months',
-      location: 'Guntur (On-site)',
-      description: 'Support the Human Resources team in end-to-end recruitment with valuable exposure to HR operations, hiring workflows, and talent acquisition strategies.',
-      requirements: [
-        'MBA (HR) students or recent graduates preferred',
-        'Strong communication and organizational skills',
-        'Familiarity with job portals like Naukri, Indeed, etc., is a plus',
-        'Attention to detail and ability to maintain candidate databases'
-      ]
-    },
-    {
-      id: '4',
-      title: 'Tender Executive Intern',
-      duration: '6 months',
-      location: 'Guntur (On-site)',
-      description: 'Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.',
-      requirements: [
-        'Students or graduates in Business Administration, Commerce, or relevant fields',
-        'Basic understanding of government procurement/tendering process preferred (not mandatory)',
-        'Strong attention to detail and MS Office skills',
-        'Ability to coordinate with cross-functional teams'
-      ]
-    }
   ];
 
   const benefits = [
     {
       icon: Award,
-      title: 'Competitive Compensation',
-      description: 'Industry-leading salary packages with performance-based incentives and bonuses.'
+      title: "Competitive Compensation",
+      description:
+        "Industry-leading salary packages with performance-based incentives and bonuses.",
     },
     {
       icon: GraduationCap,
-      title: 'Learning & Development',
-      description: 'Continuous learning opportunities, certifications, and professional development programs.'
+      title: "Learning & Development",
+      description:
+        "Continuous learning opportunities, certifications, and professional development programs.",
     },
     {
       icon: Users,
-      title: 'Collaborative Culture',
-      description: 'Work with talented professionals in a supportive and inclusive environment.'
+      title: "Collaborative Culture",
+      description:
+        "Work with talented professionals in a supportive and inclusive environment.",
     },
     {
       icon: Briefcase,
-      title: 'Career Growth',
-      description: 'Clear career progression paths with opportunities for advancement and leadership roles.'
-    }
+      title: "Career Growth",
+      description:
+        "Clear career progression paths with opportunities for advancement and leadership roles.",
+    },
   ];
 
   return (
@@ -186,13 +234,38 @@ export default function CareersPage() {
                 Join Our Team
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Build your career with us and be part of a dynamic team that's shaping 
-                the future of management consulting and business solutions.
+                Build your career with us and be part of a dynamic team that's
+                shaping the future of management consulting and business
+                solutions.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <div className="max-w-xl mx-auto my-12 p-6 text-center bg-red-500 text-white rounded-xl shadow-lg fade-in">
+        <h1 className="text-2xl font-bold mb-3">Contact HR for Job Enquiry</h1>
+        <p className="text-lg mb-6">
+          For any job-related inquiries, please reach out to our HR team.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+919985624111"
+            className="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-red-100 transition duration-300"
+          >
+            📞 Call HR
+          </a>
+
+          <a
+            href="https://wa.me/919985624111"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-600 transition duration-300"
+          >
+            💬 WhatsApp HR
+          </a>
+        </div>
+      </div>
 
       {/* Why Join Us */}
       <section className="py-20">
@@ -203,8 +276,9 @@ export default function CareersPage() {
                 Why Choose SDC Management Solutions?
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                We offer more than just a job – we provide a platform for growth, 
-                learning, and making a meaningful impact in the industry.
+                We offer more than just a job – we provide a platform for
+                growth, learning, and making a meaningful impact in the
+                industry.
               </p>
             </div>
           </div>
@@ -213,7 +287,10 @@ export default function CareersPage() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <Card key={index} className="scale-in text-center hover:shadow-lg transition-shadow duration-300">
+                <Card
+                  key={index}
+                  className="scale-in text-center hover:shadow-lg transition-shadow duration-300"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 text-primary">
                       <Icon className="h-8 w-8" />
@@ -241,15 +318,19 @@ export default function CareersPage() {
                 Current Openings
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Explore exciting career opportunities across various departments 
-                and find the perfect role that matches your skills and aspirations.
+                Explore exciting career opportunities across various departments
+                and find the perfect role that matches your skills and
+                aspirations.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {jobOpenings.map((job, index) => (
-              <Card key={job.id} className="scale-in hover:shadow-xl transition-shadow duration-300">
+              <Card
+                key={job.id}
+                className="scale-in hover:shadow-xl transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -281,15 +362,24 @@ export default function CareersPage() {
                   </p>
 
                   <div className="flex space-x-3">
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       size="sm"
-                      onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
+                      onClick={() =>
+                        setSelectedJob(selectedJob === job.id ? null : job.id)
+                      }
                     >
-                      {selectedJob === job.id ? 'Hide Details' : 'View Details'}
+                      {selectedJob === job.id ? "Hide Details" : "View Details"}
                     </Button>
                     <Button size="sm" className="group">
-                      Apply Now
+                      <a
+                        href="https://wa.me/919985624111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Apply Now
+                      </a>
+
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
@@ -297,10 +387,15 @@ export default function CareersPage() {
                   {selectedJob === job.id && (
                     <div className="mt-6 pt-6 border-t space-y-4">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Requirements:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          Requirements:
+                        </h4>
                         <ul className="space-y-1">
                           {job.requirements.map((req, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                            <li
+                              key={idx}
+                              className="flex items-center text-sm text-muted-foreground"
+                            >
                               <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                               {req}
                             </li>
@@ -308,10 +403,15 @@ export default function CareersPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Responsibilities:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          Responsibilities:
+                        </h4>
                         <ul className="space-y-1">
                           {job.responsibilities.map((resp, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                            <li
+                              key={idx}
+                              className="flex items-center text-sm text-muted-foreground"
+                            >
                               <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                               {resp}
                             </li>
@@ -336,20 +436,24 @@ export default function CareersPage() {
                 Internship Opportunities
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Start your career journey with our comprehensive internship programs 
-                designed to provide real-world experience and mentorship.
+                Start your career journey with our comprehensive internship
+                programs designed to provide real-world experience and
+                mentorship.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {internships.map((internship, index) => (
-              <Card key={internship.id} className="scale-in hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={internship.id}
+                className="scale-in hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-2">
                     {internship.title}
                   </h3>
-                  
+
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="h-4 w-4 mr-2" />
@@ -366,10 +470,15 @@ export default function CareersPage() {
                   </p>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Requirements:</h4>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      Requirements:
+                    </h4>
                     <ul className="space-y-1">
                       {internship.requirements.map((req, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <li
+                          key={idx}
+                          className="flex items-center text-sm text-muted-foreground"
+                        >
                           <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                           {req}
                         </li>
@@ -377,8 +486,8 @@ export default function CareersPage() {
                     </ul>
                   </div>
 
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-full group"
                     onClick={scrollToApplyForm}
                   >
@@ -402,8 +511,8 @@ export default function CareersPage() {
                   Apply Now
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Ready to join our team? Submit your application and let's start 
-                  a conversation about your future with us.
+                  Ready to join our team? Submit your application and let's
+                  start a conversation about your future with us.
                 </p>
               </div>
             </div>
@@ -445,7 +554,7 @@ export default function CareersPage() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Cover Letter
                     </label>
-                    <Textarea 
+                    <Textarea
                       placeholder="Tell us why you're interested in this position and what makes you a great fit..."
                       rows={4}
                     />
