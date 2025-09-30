@@ -58,33 +58,33 @@ export default function CareersPage() {
       requirements: ["Hands-on experience with Tally ERP"],
       responsibilities: [],
     },
-    {
-      id: "3",
-      title: "Store Executive",
-      department: "Sales  & Marketing",
-      location: "Hyderabad",
-      type: "Full-time",
-      experience: "1–2 years",
-      description:
-        "Good communication skills, basic computer knowledge, and a background in sales.",
-      requirements: [
-        "Good communication skills",
-        "Basic computer knowledge",
-        "Background in sales",
-      ],
-      responsibilities: [],
-    },
-    {
-      id: "4",
-      title: "Sales Executive",
-      department: "Sales  & Marketing",
-      location: "Visakhapatnam, Hyderabad, Rajahmundry",
-      type: "Full-time",
-      experience: "1–2 years in FMCG sales",
-      description: "Proven experience in field sales within the FMCG sector.",
-      requirements: ["Proven experience in field sales within the FMCG sector"],
-      responsibilities: [],
-    },
+    // {
+    //   id: "3",
+    //   title: "Store Executive",
+    //   department: "Sales  & Marketing",
+    //   location: "Hyderabad",
+    //   type: "Full-time",
+    //   experience: "1–2 years",
+    //   description:
+    //     "Good communication skills, basic computer knowledge, and a background in sales.",
+    //   requirements: [
+    //     "Good communication skills",
+    //     "Basic computer knowledge",
+    //     "Background in sales",
+    //   ],
+    //   responsibilities: [],
+    // },
+    // {
+    //   id: "4",
+    //   title: "Sales Executive",
+    //   department: "Sales  & Marketing",
+    //   location: "Visakhapatnam, Hyderabad, Rajahmundry",
+    //   type: "Full-time",
+    //   experience: "1–2 years in FMCG sales",
+    //   description: "Proven experience in field sales within the FMCG sector.",
+    //   requirements: ["Proven experience in field sales within the FMCG sector"],
+    //   responsibilities: [],
+    // },
     {
       id: "5",
       title: "Business Development Manager(freelancer)",
@@ -113,30 +113,39 @@ export default function CareersPage() {
       ],
     },
     {
-      id: "6",
-      title: "Skill Development Trainer",
-      department: "Skill Development",
-      location: "Hyderabad",
-      type: "Full-time",
-      experience: "0–1 year",
-      description:
-        "We are looking for an enthusiastic and skilled Trainer to deliver high-quality training sessions that enhance the employability and professional skills of students, professionals, and community participants. The Trainer will focus on soft skills, communication, job readiness, and other relevant areas to support participants in achieving their career goals.",
-      requirements: [
-        "Deliver engaging and interactive training sessions on soft skills, communication, job readiness, and other employability skills.",
-        "Design and implement effective training modules tailored to participant needs.",
-        "Assess participants through activities, assignments, and evaluations.",
-        "Track and report participant attendance, performance, and learning outcomes.",
-        "Provide career guidance, counseling, and support to participants for skill application and job readiness.",
-        "Collaborate with the coordinator and other stakeholders to ensure smooth execution of training programs.",
-      ],
-      responsibilities: [
-        "Bachelor’s degree in any discipline.",
-        "1–3 years of experience in training or facilitation, preferably in skill development programs",
-        "Strong communication and presentation skills.",
-        "Ability to engage and motivate youth.",
-        "Basic proficiency in MS Office.",
-      ],
-    },
+  id: "6",
+  title: "Trainer – Banking, BPO & Employability Skills",
+  department: "Skill Development (CSR Project)",
+  location: "Ramanthapur, Hyderabad",
+  type: "Full-time",
+  experience: "2–3 years",
+  description:
+    "We are looking for an experienced female trainer to lead sessions under our CSR Skill Development initiative. The trainer will be responsible for delivering high-quality training in Banking, BPO, and Employability Skills to students/candidates, ensuring they are industry-ready and capable of securing sustainable employment opportunities.",
+  requirements: [
+    "Graduate / Postgraduate in any discipline (Commerce, Management, or related field preferred).",
+    "Minimum 2–3 years of training experience in Banking, BPO, Soft Skills, or Employability Skills.",
+    "Excellent communication, presentation, and interpersonal skills.",
+    "Proficiency in English and local language.",
+    "Ability to handle diverse groups of learners and adapt training methods accordingly.",
+    "Passion for teaching and empowering youth through skill development."
+  ],
+  responsibilities: [
+    "Conduct classroom training sessions on Banking, BPO, Communication, and Employability Skills.",
+    "Develop and deliver engaging training modules, lesson plans, and assessments.",
+    "Focus on improving students’ spoken English, soft skills, interview skills, and professional etiquette.",
+    "Mentor and guide candidates to enhance confidence and workplace readiness.",
+    "Assess student progress, provide feedback, and prepare regular reports.",
+    "Ensure training is aligned with industry standards and CSR project objectives.",
+    "Coordinate with project coordinators and HR for smooth execution of training schedules.",
+    "Motivate learners to achieve career goals and support them in placement activities."
+  ],
+  preferredSkills: [
+    "Exposure to CSR/Skill Development/NSDC projects.",
+    "Knowledge of banking products, BPO processes, and customer service skills.",
+    "Basic computer literacy (MS Office, PPT, Email)."
+  ],
+  compensation: "As per company norms with additional benefits under CSR project guidelines."
+},
   ];
 
   const internships = [
@@ -180,20 +189,20 @@ export default function CareersPage() {
         "Attention to detail and ability to maintain candidate databases",
       ],
     },
-    {
-      id: "4",
-      title: "Tender Executive Intern",
-      duration: "6 months",
-      location: "Guntur (On-site)",
-      description:
-        "Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.",
-      requirements: [
-        "Students or graduates in Business Administration, Commerce, or relevant fields",
-        "Basic understanding of government procurement/tendering process preferred (not mandatory)",
-        "Strong attention to detail and MS Office skills",
-        "Ability to coordinate with cross-functional teams",
-      ],
-    },
+    // {
+    //   id: "4",
+    //   title: "Tender Executive Intern",
+    //   duration: "6 months",
+    //   location: "Guntur (On-site)",
+    //   description:
+    //     "Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.",
+    //   requirements: [
+    //     "Students or graduates in Business Administration, Commerce, or relevant fields",
+    //     "Basic understanding of government procurement/tendering process preferred (not mandatory)",
+    //     "Strong attention to detail and MS Office skills",
+    //     "Ability to coordinate with cross-functional teams",
+    //   ],
+    // },
   ];
 
   const benefits = [
@@ -412,7 +421,7 @@ export default function CareersPage() {
                               key={idx}
                               className="flex items-center text-sm text-muted-foreground"
                             >
-                              <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                               {resp}
                             </li>
                           ))}
