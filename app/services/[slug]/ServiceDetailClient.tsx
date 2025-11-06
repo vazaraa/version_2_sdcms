@@ -33,6 +33,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import type { Service } from '@/data/services';
+import { services as allServices } from '@/data/services';
 import Image from 'next/image';
 
 interface ServiceDetailClientProps {
@@ -54,6 +55,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: string | number; clas
 const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service }) => {
   const containerRef = useGSAP();
   const Icon = iconMap[service.icon] || Target;
+  const relatedServices = allServices.filter(s => s.slug !== service.slug).slice(0, 3);
 
   return (
     <div ref={containerRef} className="min-h-screen bg-brand-cream">
@@ -174,6 +176,31 @@ const ServiceDetailClient: React.FC<ServiceDetailClientProps> = ({ service }) =>
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedServices.map(rs => (
+              <Card key={rs.id}>
+                <CardContent className="p-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{rs.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{rs.description}</p>
+                  <div className="flex gap-3">
+                    <Button variant="outline" size="sm">
+                      <Link href={`/services/${rs.slug}`}>Learn More</Link>
+                    </Button>
+                    <Button size="sm">
+                      <Link href="/contact">Get Quote</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

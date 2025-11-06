@@ -8,6 +8,11 @@ export default function GroupCompaniesPage() {
     <div className="min-h-screen bg-brand-cream">
       <div className="container mx-auto py-12">
         <h1 className="text-4xl font-bold mb-8">Our Group Companies</h1>
+        <div className="mb-6 text-sm">
+          <Link href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">management consulting at SDCMS</Link>
+          <Link href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">explore our services</Link>
+          <Link href="/contact" className="text-primary font-medium hover:underline underline-offset-4">partner with us</Link>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {companies.map((company) => (
             <div key={company.id} className="bg-white rounded-lg shadow-md p-6">

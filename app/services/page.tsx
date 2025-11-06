@@ -8,6 +8,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Target, Users, Building, Truck, Shield, Wrench, GraduationCap, ClipboardList, Award } from 'lucide-react';
 import { services } from '@/data/services';
 
+ 
+
 export default function ServicesPage() {
   const containerRef = useGSAP();
 
@@ -34,9 +36,15 @@ export default function ServicesPage() {
                 Our Comprehensive Services
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Delivering excellence across multiple domains with specialized expertise, 
-                innovative solutions, and unwavering commitment to client success.
+                SDCMS delivers contract staffing, skilled and unskilled labor supply, payroll
+                outsourcing, compliance and statutory management, and corporate facility
+                management across Guntur, Andhra Pradesh and South India.
               </p>
+              {/* <div className="mt-2 text-sm">
+                <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4 mr-4">request a manpower proposal</a>
+                <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">why SDCMS for HR outsourcing</a>
+                <a href="/careers" className="text-primary font-medium hover:underline underline-offset-4">join our staffing & facility teams</a>
+              </div> */}
             </div>
           </div>
         </div>

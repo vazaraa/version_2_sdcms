@@ -238,6 +238,11 @@ export default function ProjectsPage() {
                 Showcasing our expertise through successful project deliveries across 
                 diverse industries and sectors, creating lasting impact and value.
               </p>
+              {/* <div className="mt-3 text-sm">
+                <Link href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">see related facility management services</Link>
+                <Link href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">learn about our team</Link>
+                <Link href="/contact" className="text-primary font-medium hover:underline underline-offset-4">talk to us about similar work</Link>
+              </div> */}
             </div>
           </div>
         </div>

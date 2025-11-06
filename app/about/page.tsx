@@ -28,6 +28,8 @@ import { testimonials, boardMembers } from '@/data/testimonials';
 import animationData from '@/lotti/Animation - 1751871345994.json';
 import { Timeline } from '@/components/ui/timeline';
 
+ 
+
 export default function AboutPage() {
   const containerRef = useGSAP();
 
@@ -137,8 +139,9 @@ export default function AboutPage() {
                 About Us
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                SDCMS was established in 2013, SDCMS group headquarters located in Andhra Pradesh, 
-                Most dependable business support and growth partner.
+                SDCMS is a trusted manpower outsourcing partner from Guntur, Andhra Pradesh. We
+                specialize in HR outsourcing, contract staffing, compliance, and facility
+                management across South India for government and private clients.
               </p>
             </div>
           </div>
@@ -230,7 +233,7 @@ export default function AboutPage() {
             <div className="flex justify-center items-center">
               <img
                 src="/images/our_core_values.webp"
-                alt="Our Core Values"
+                alt="SDCMS core values – HR outsourcing and facility management in Guntur"
                 className="rounded-3xl shadow-2xl w-full max-w-2xl h-auto object-cover"
               />
             </div>

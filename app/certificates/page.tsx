@@ -56,6 +56,11 @@ export default function CertificatesPage() {
                 Demonstrating our commitment to excellence through industry-recognized 
                 certifications, quality standards, and professional achievements.
               </p>
+              <div className="mt-3 text-sm">
+                <Link href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">compliance and statutory management</Link>
+                <Link href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">about SDCMS certifications</Link>
+                <Link href="/contact" className="text-primary font-medium hover:underline underline-offset-4">contact for documentation support</Link>
+              </div>
             </div>
           </div>
         </div>

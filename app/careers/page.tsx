@@ -18,6 +18,8 @@ import {
   Upload,
 } from "lucide-react";
 
+ 
+
 export default function CareersPage() {
   const containerRef = useGSAP();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
@@ -243,10 +245,15 @@ export default function CareersPage() {
                 Join Our Team
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Build your career with us and be part of a dynamic team that's
-                shaping the future of management consulting and business
-                solutions.
+                Explore jobs at SDCMS in staffing, housekeeping, HR and facility
+                management. Find career opportunities in Guntur, Andhra Pradesh and
+                across South India.
               </p>
+              {/* <div className="mt-2 text-sm">
+                <a href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">see what we deliver to clients</a>
+                <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">our culture and growth</a>
+                <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4">speak to our recruitment team</a>
+              </div> */}
             </div>
           </div>
         </div>

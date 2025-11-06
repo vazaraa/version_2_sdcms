@@ -15,8 +15,10 @@ export const useGSAP = () => {
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
+      const has = (selector: string) => (gsap.utils.toArray(selector) as Element[]).length > 0;
+
       // Fade in animations
-      gsap.fromTo('.fade-in', 
+      has('.fade-in') && gsap.fromTo('.fade-in', 
         { opacity: 0, y: 30 },
         { 
           opacity: 1, 
@@ -32,7 +34,7 @@ export const useGSAP = () => {
       );
 
       // Slide in from left
-      gsap.fromTo('.slide-in-left',
+      has('.slide-in-left') && gsap.fromTo('.slide-in-left',
         { opacity: 0, x: -50 },
         {
           opacity: 1,
@@ -48,7 +50,7 @@ export const useGSAP = () => {
       );
 
       // Slide in from right
-      gsap.fromTo('.slide-in-right',
+      has('.slide-in-right') && gsap.fromTo('.slide-in-right',
         { opacity: 0, x: 50 },
         {
           opacity: 1,
@@ -64,7 +66,7 @@ export const useGSAP = () => {
       );
 
       // Scale in animations
-      gsap.fromTo('.scale-in',
+      has('.scale-in') && gsap.fromTo('.scale-in',
         { opacity: 0, scale: 0.8 },
         {
           opacity: 1,

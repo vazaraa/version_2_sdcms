@@ -19,6 +19,8 @@ import {
   Globe,
 } from "lucide-react";
 
+ 
+
 export default function ContactPage() {
   const containerRef = useGSAP();
 
@@ -84,10 +86,15 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Ready to transform your business? Let's start a conversation
-                about how we can help you achieve your goals and drive
-                sustainable growth.
+                Reach SDCMS for manpower outsourcing, facility management, housekeeping,
+                payroll outsourcing and HR outsourcing. We serve clients across Guntur,
+                Andhra Pradesh and South India.
               </p>
+              <div className="mt-2 text-sm">
+                <a href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">explore manpower outsourcing services</a>
+                <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">learn about SDCMS</a>
+                <a href="/careers" className="text-primary font-medium hover:underline underline-offset-4">jobs at SDCMS</a>
+              </div>
             </div>
           </div>
         </div>

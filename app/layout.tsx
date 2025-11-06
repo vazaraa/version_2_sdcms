@@ -6,12 +6,52 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'SDC Management Solutions - Empowering Organizations for Sustainable Growth',
-  description: 'SDC Management Solutions provides comprehensive services including government outsourcing, recruitment, construction management, mining, security, and more.',
-  keywords: 'SDC Management Solutions, government outsourcing, recruitment services, construction management, mining services, security services, staffing solutions, business consulting',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://sdcms.in'),
+  title: {
+    default: 'SDC Management Solutions Private Limited (SDCMS) | Manpower & Facility Management',
+    template: '%s | SDC Management Solutions (SDCMS)'
+  },
+  description: 'SDCMS in Guntur, Andhra Pradesh provides manpower outsourcing, staffing, HR outsourcing, facility management, housekeeping and payroll services across South India.',
+  keywords: [
+    'SDC Management Solutions Pvt Ltd',
+    'SDC Management Solutions Private Limited',
+    'SDCMS Guntur',
+    'manpower outsourcing',
+    'HR outsourcing',
+    'facility management solutions',
+    'housekeeping and cleaning services',
+    'contract staffing',
+    'payroll outsourcing',
+    'South India',
+    'Andhra Pradesh'
+  ],
   verification: {
     google: 'google9efb0f546367e64a',
   },
+  openGraph: {
+    type: 'website',
+    title: 'SDCMS | Manpower Outsourcing, HR & Facility Management in Guntur',
+    description: 'Trusted manpower outsourcing and facility management company in Guntur, Andhra Pradesh. SDCMS delivers staffing, HR outsourcing, housekeeping and payroll solutions across South India.',
+    url: '/',
+    images: [
+      {
+        url: '/og/sdcms-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SDCMS Manpower & Facility Management in Guntur'
+      }
+    ],
+    locale: 'en_IN'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SDCMS | Manpower, HR Outsourcing & Facility Management',
+    description: 'SDCMS provides staffing, HR outsourcing, housekeeping and payroll services across South India from Guntur, Andhra Pradesh.',
+    images: ['/og/sdcms-og.jpg']
+  },
+  alternates: {
+    canonical: '/'
+  }
 };
 
 export default function RootLayout({
@@ -22,6 +62,48 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans bg-brand-cream text-foreground">
+        <Script id="org-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'SDC Management Solutions Private Limited',
+            alternateName: 'SDCMS',
+            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
+            logo: (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com') + '/logo.png',
+            sameAs: []
+          })}
+        </Script>
+        <Script id="localbusiness-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'SDC Management Solutions Private Limited',
+            image: (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com') + '/og/sdcms-og.jpg',
+            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
+            telephone: '+91-0000000000',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Guntur',
+              addressLocality: 'Guntur',
+              addressRegion: 'Andhra Pradesh',
+              postalCode: '522001',
+              addressCountry: 'IN'
+            },
+            areaServed: ['Guntur', 'Andhra Pradesh', 'South India']
+          })}
+        </Script>
+        <Script id="services-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Manpower Outsourcing, HR Outsourcing & Facility Management',
+            provider: {
+              '@type': 'Organization',
+              name: 'SDC Management Solutions Private Limited'
+            },
+            areaServed: ['Guntur', 'Andhra Pradesh', 'South India']
+          })}
+        </Script>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-P7K2MY3BZ3" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`

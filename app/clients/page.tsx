@@ -35,6 +35,11 @@ export default function ClientsPage() {
                 Trusted by industry leaders across diverse sectors, we've built lasting 
                 partnerships through exceptional service delivery and innovative solutions.
               </p>
+              {/* <div className="mt-3 text-sm">
+                <Link href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">view our comprehensive services</Link>
+                <Link href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">read about SDCMS</Link>
+                <Link href="/contact" className="text-primary font-medium hover:underline underline-offset-4">request a proposal</Link>
+              </div> */}
             </div>
           </div>
         </div>
