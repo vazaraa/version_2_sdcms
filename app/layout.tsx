@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'SDC Management Solutions - Empowering Organizations for Sustainable Growth',
   description: 'SDC Management Solutions provides comprehensive services including government outsourcing, recruitment, construction management, mining, security, and more.',
   keywords: 'SDC Management Solutions, government outsourcing, recruitment services, construction management, mining services, security services, staffing solutions, business consulting',
+  verification: {
+    google: 'google9efb0f546367e64a',
+  },
 };
 
 export default function RootLayout({
