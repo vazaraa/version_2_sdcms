@@ -14,8 +14,8 @@ export default function HomeClient() {
     <div ref={containerRef} className="bg-brand-cream">
       <Hero />
       {/* SEO intro: embed high-value keywords within first fold */}
-      {/* <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="sr-only">Manpower Outsourcing & Facility Management in Guntur</h1>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">SDC Management Solutions Pvt Ltd — Manpower Outsourcing & Facility Management</h1>
         <p className="text-base text-muted-foreground">
           SDC Management Solutions Private Limited (SDCMS) provides
           <strong> manpower outsourcing</strong>, <strong>HR outsourcing</strong>,
@@ -29,7 +29,7 @@ export default function HomeClient() {
           <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">trusted HR outsourcing partner</a>
           <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4">get a staffing quote in Guntur</a>
         </div>
-      </div> */}
+      </div>
       <AboutSection />
       <ClientsScroller />
     </div>

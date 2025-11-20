@@ -40,11 +40,11 @@ export default function ServicesPage() {
                 outsourcing, compliance and statutory management, and corporate facility
                 management across Guntur, Andhra Pradesh and South India.
               </p>
-              {/* <div className="mt-2 text-sm">
+              <div className="mt-2 text-sm">
                 <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4 mr-4">request a manpower proposal</a>
                 <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">why SDCMS for HR outsourcing</a>
                 <a href="/careers" className="text-primary font-medium hover:underline underline-offset-4">join our staffing & facility teams</a>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

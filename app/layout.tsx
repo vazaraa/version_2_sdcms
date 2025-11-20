@@ -66,42 +66,22 @@ export default function RootLayout({
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'SDC Management Solutions Private Limited',
+            name: 'SDC Management Solutions Pvt Ltd',
             alternateName: 'SDCMS',
-            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
-            logo: (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com') + '/logo.png',
-            sameAs: []
-          })}
-        </Script>
-        <Script id="localbusiness-jsonld" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: 'SDC Management Solutions Private Limited',
-            image: (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com') + '/og/sdcms-og.jpg',
-            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
-            telephone: '+91-0000000000',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Guntur',
-              addressLocality: 'Guntur',
-              addressRegion: 'Andhra Pradesh',
-              postalCode: '522001',
-              addressCountry: 'IN'
-            },
-            areaServed: ['Guntur', 'Andhra Pradesh', 'South India']
-          })}
-        </Script>
-        <Script id="services-jsonld" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            serviceType: 'Manpower Outsourcing, HR Outsourcing & Facility Management',
-            provider: {
-              '@type': 'Organization',
-              name: 'SDC Management Solutions Private Limited'
-            },
-            areaServed: ['Guntur', 'Andhra Pradesh', 'South India']
+            url: 'https://sdcms.in',
+            logo: 'https://sdcms.in/images/logo.webp',
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                telephone: '+919985263111',
+                contactType: 'customer service',
+                areaServed: 'IN'
+              }
+            ],
+            sameAs: [
+              'https://www.linkedin.com/company/sdc-management-solutions-pvt-ltd',
+              'https://www.facebook.com/SDCMS-PvtLtd'
+            ]
           })}
         </Script>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-P7K2MY3BZ3" strategy="afterInteractive" />

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import HomeClient from './HomeClient';
 
 export const metadata: Metadata = {
-  title: 'SDCMS | Manpower Outsourcing & Facility Management Guntur',
-  description: 'Manpower outsourcing, HR outsourcing, facility management, housekeeping and payroll services in Guntur, Andhra Pradesh and South India.',
+  title: 'SDC Management Solutions Pvt Ltd (SDCMS) — Manpower Outsourcing & Facility Management, Guntur',
+  description: 'SDC Management Solutions Pvt Ltd — Manpower outsourcing, facility & HR management, housekeeping and payroll services in Guntur and South India. Contact: +91 9985263111',
   keywords: [
     'SDC Management Solutions Pvt Ltd',
     'SDCMS Guntur',

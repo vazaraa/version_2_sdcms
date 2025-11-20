@@ -249,11 +249,11 @@ export default function CareersPage() {
                 management. Find career opportunities in Guntur, Andhra Pradesh and
                 across South India.
               </p>
-              {/* <div className="mt-2 text-sm">
+              <div className="mt-2 text-sm">
                 <a href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">see what we deliver to clients</a>
                 <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">our culture and growth</a>
                 <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4">speak to our recruitment team</a>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
