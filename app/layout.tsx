@@ -104,6 +104,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             ]
           })}
         </Script>
+        <Script id="localbusiness-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            '@id': 'https://sdcms.in',
+            name: 'SDC Management Solutions Pvt Ltd',
+            alternateName: 'SDCMS',
+            image: 'https://sdcms.in/images/logo.webp',
+            url: 'https://sdcms.in',
+            telephone: '+919985263111',
+            priceRange: '$$',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Vidya Nagar 1st Lane',
+              addressLocality: 'Guntur',
+              addressRegion: 'Andhra Pradesh',
+              postalCode: '522007',
+              addressCountry: 'IN'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: '16.3067',
+              longitude: '80.4365'
+            },
+            openingHoursSpecification: [
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '09:30',
+                closes: '18:30'
+              }
+            ],
+            areaServed: [
+              {
+                '@type': 'City',
+                name: 'Hyderabad',
+                '@id': 'https://www.wikidata.org/wiki/Q1156'
+              },
+              {
+                '@type': 'State',
+                name: 'Telangana',
+                '@id': 'https://www.wikidata.org/wiki/Q1189'
+              },
+              {
+                '@type': 'State',
+                name: 'Andhra Pradesh',
+                '@id': 'https://www.wikidata.org/wiki/Q1159'
+              },
+              {
+                '@type': 'Country',
+                name: 'India',
+                '@id': 'https://www.wikidata.org/wiki/Q668'
+              }
+            ],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'SDCMS Services',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'HR Outsourcing',
+                    description: 'Comprehensive HR outsourcing and staffing solutions'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Contract Staffing',
+                    description: 'Contract staffing and manpower outsourcing services'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Skill Development Training',
+                    description: 'Training programs and skill development initiatives'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Facility Management',
+                    description: 'Facility management and housekeeping services'
+                  }
+                }
+              ]
+            }
+          })}
+        </Script>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-P7K2MY3BZ3" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
