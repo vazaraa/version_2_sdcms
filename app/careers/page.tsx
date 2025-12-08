@@ -15,7 +15,6 @@ import {
   Users,
   Award,
   GraduationCap,
-  Upload,
 } from "lucide-react";
 
  
@@ -23,12 +22,57 @@ import {
 export default function CareersPage() {
   const containerRef = useGSAP();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    position: "",
+    coverLetter: "",
+  });
 
   const scrollToApplyForm = () => {
     const applyForm = document.getElementById("apply-form");
     if (applyForm) {
       applyForm.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Format the message for WhatsApp with all filled fields
+    const message = `*Job Application - SDCMS*
+
+*Full Name:* ${formData.name || 'Not provided'}
+*Email Address:* ${formData.email || 'Not provided'}
+*Phone Number:* ${formData.phone || 'Not provided'}
+*Position Applied For:* ${formData.position || 'Not provided'}
+${formData.coverLetter ? `\n*Cover Letter:*\n${formData.coverLetter}` : ''}
+
+Thank you for your interest in joining SDCMS!`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Redirect to WhatsApp with pre-filled message
+    window.open(`https://wa.me/919985624111?text=${encodedMessage}`, '_blank');
+    
+    // Reset form after redirect
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      position: "",
+      coverLetter: "",
+    });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const jobOpenings = [
@@ -564,19 +608,32 @@ export default function CareersPage() {
 
             <Card className="slide-in-left">
               <CardContent className="p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
                       </label>
-                      <Input placeholder="Enter your full name" />
+                      <Input 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Enter your full name" 
+                        required
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email Address *
                       </label>
-                      <Input type="email" placeholder="Enter your email" />
+                      <Input 
+                        name="email"
+                        type="email" 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Enter your email" 
+                        required
+                      />
                     </div>
                   </div>
 
@@ -585,13 +642,26 @@ export default function CareersPage() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number *
                       </label>
-                      <Input placeholder="Enter your phone number" />
+                      <Input 
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="Enter your phone number" 
+                        required
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Position Applied For *
                       </label>
-                      <Input placeholder="Enter position title" />
+                      <Input 
+                        name="position"
+                        value={formData.position}
+                        onChange={handleInputChange}
+                        placeholder="Enter position title" 
+                        required
+                      />
                     </div>
                   </div>
 
@@ -600,27 +670,15 @@ export default function CareersPage() {
                       Cover Letter
                     </label>
                     <Textarea
+                      name="coverLetter"
+                      value={formData.coverLetter}
+                      onChange={handleInputChange}
                       placeholder="Tell us why you're interested in this position and what makes you a great fit..."
                       rows={4}
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Resume Upload *
-                    </label>
-                    <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center">
-                      <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-muted-foreground mb-2">
-                        Drag and drop your resume here, or click to browse
-                      </p>
-                      <Button variant="outline" size="sm">
-                        Choose File
-                      </Button>
-                    </div>
-                  </div>
-
-                  <Button size="lg" className="w-full group">
+                  <Button type="submit" size="lg" className="w-full group">
                     Submit Application
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
