@@ -59,9 +59,9 @@ export const boardMembers: BoardMember[] = [
     src: "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D",
   },
   {
-    name: "Pawan Kumar",
-    designation: "IT Head",
-    bio: "Pawan Kumar oversees all IT operations and digital transformation initiatives at SDC, ensuring robust technology infrastructure and innovative solutions for business growth.",
-    src: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D",
+    name: "Tirupathi",
+    designation: "Operational Manager",
+    bio: "Tirupathi, based in Tirupati, serves as the Operational Manager of SDCMS, bringing extensive expertise in managing day-to-day operations and ensuring seamless service delivery across multiple locations. With a strong focus on operational excellence, he oversees field operations, client relations, and team coordination to maintain high standards of service quality. His strategic approach to operations management has been instrumental in optimizing processes, improving efficiency, and driving customer satisfaction. Tirupathi plays a crucial role in coordinating between various departments, managing resources effectively, and ensuring that all operational activities align with SDCMS's commitment to excellence and client-centric service delivery.",
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ]; 

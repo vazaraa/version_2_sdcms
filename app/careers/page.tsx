@@ -148,6 +148,35 @@ export default function CareersPage() {
   ],
   compensation: "As per company norms with additional benefits under CSR project guidelines."
 },
+    {
+      id: "7",
+      title: "Business Development Executive (Field Sales)",
+      department: "Sales & Marketing",
+      location: "Tirupati, Sangareddy, Vijayawada, Ongole",
+      type: "Full-time",
+      experience: "Fresher or Experienced",
+      description:
+        "We are looking for dynamic and motivated Business Development Executives to join our field sales team. The role involves client visits, lead generation, relationship building, and achieving sales targets within the assigned territory. Shift Timing: 9:30 AM to 6:30 PM | Weekly Off: Sunday fixed off.",
+      requirements: [
+        "Male candidates only",
+        "Age below 30 years",
+        "Good communication and convincing skills",
+        "Ability to travel within assigned areas",
+        "Freshers and experienced candidates welcome",
+      ],
+      responsibilities: [
+        "Identify potential clients and generate new business",
+        "Conduct field visits and follow up with prospects",
+        "Build and maintain strong customer relationships",
+        "Achieve monthly and quarterly sales targets",
+        "Prepare daily reports and update sales activities",
+        "Coordinate with internal teams for smooth onboarding of clients",
+      ],
+      workDetails: {
+        shiftTiming: "9:30 AM to 6:30 PM",
+        weeklyOff: "Sunday fixed off",
+      },
+    },
   ];
 
   const internships = [

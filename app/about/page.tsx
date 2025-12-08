@@ -315,6 +315,26 @@ export default function AboutPage() {
                     “Our mission is to create impactful opportunities and empower youth across India by building diverse employment platforms.”
                   </p>
                 </div>
+              ) : boardMembers[leaderIndex].name === 'Tirupathi' ? (
+                <div className="space-y-4 text-left">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary">Meet the Operational Manager</h2>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Tirupathi</h3>
+                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                    Tirupathi serves as the Operational Manager of SDCMS, based in Tirupati. He brings extensive expertise in managing day-to-day operations and ensuring seamless service delivery across multiple locations. His strategic approach to operations management has been instrumental in optimizing processes, improving efficiency, and driving customer satisfaction.
+                  </p>
+                  <div className="space-y-2">
+                    <p>📍 <strong>Location:</strong> Tirupati, Andhra Pradesh</p>
+                    <p>💼 <strong>Role:</strong> Operational Manager at SDCMS</p>
+                    <p>🎯 <strong>Key Responsibilities:</strong> Managing field operations, client relations, team coordination, and resource optimization</p>
+                    <p>✨ <strong>Expertise:</strong> Operations management, process optimization, service delivery excellence, client relationship management</p>
+                    <p>🏆 <strong>Achievements:</strong> Successfully coordinating operations across multiple locations, maintaining high service quality standards, and driving operational efficiency</p>
+                    <p>🤝 <strong>Focus:</strong> Ensuring seamless coordination between departments, effective resource management, and client-centric service delivery</p>
+                    <p>📊 <strong>Impact:</strong> Plays a crucial role in maintaining SDCMS's commitment to excellence and operational excellence across all service verticals</p>
+                  </div>
+                  <p className="text-md italic text-gray-600 dark:text-gray-400">
+                    "Excellence in operations is the foundation of exceptional service delivery and client satisfaction."
+                  </p>
+                </div>
               ) : (
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-left">{boardMembers[leaderIndex].bio}</p>
               )}
