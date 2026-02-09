@@ -17,8 +17,6 @@ import {
   GraduationCap,
 } from "lucide-react";
 
- 
-
 export default function CareersPage() {
   const containerRef = useGSAP();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
@@ -39,24 +37,24 @@ export default function CareersPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Format the message for WhatsApp with all filled fields
     const message = `*Job Application - SDCMS*
 
-*Full Name:* ${formData.name || 'Not provided'}
-*Email Address:* ${formData.email || 'Not provided'}
-*Phone Number:* ${formData.phone || 'Not provided'}
-*Position Applied For:* ${formData.position || 'Not provided'}
-${formData.coverLetter ? `\n*Cover Letter:*\n${formData.coverLetter}` : ''}
+*Full Name:* ${formData.name || "Not provided"}
+*Email Address:* ${formData.email || "Not provided"}
+*Phone Number:* ${formData.phone || "Not provided"}
+*Position Applied For:* ${formData.position || "Not provided"}
+${formData.coverLetter ? `\n*Cover Letter:*\n${formData.coverLetter}` : ""}
 
 Thank you for your interest in joining SDCMS!`;
 
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
-    
+
     // Redirect to WhatsApp with pre-filled message
-    window.open(`https://wa.me/919985624111?text=${encodedMessage}`, '_blank');
-    
+    window.open(`https://wa.me/919985624111?text=${encodedMessage}`, "_blank");
+
     // Reset form after redirect
     setFormData({
       name: "",
@@ -67,7 +65,9 @@ Thank you for your interest in joining SDCMS!`;
     });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -76,66 +76,39 @@ Thank you for your interest in joining SDCMS!`;
   };
 
   const jobOpenings = [
-    // {
-    //   id: "1",
-    //   title: "Accountant – Guntur",
-    //   department: "",
-    //   location: "Guntur",
-    //   type: "Full-time",
-    //   experience: "Minimum 2 years",
-    //   description: "Proficiency in GST, Tally, Excel, TDS, and IT Returns.",
-    //   requirements: [
-    //     "Proficiency in GST",
-    //     "Proficiency in Tally",
-    //     "Proficiency in Excel",
-    //     "Proficiency in TDS",
-    //     "Proficiency in IT Returns",
-    //   ],
-    //   responsibilities: [],
-    // },
     {
-      id: "2",
-      title: "Accountant – Hyderabad",
-      department: "Accounts",
-      location: "Hyderabad",
-      type: "Full-time",
-      experience: "Minimum 2 years",
-      description: "Hands-on experience with Tally ERP.",
-      requirements: ["Hands-on experience with Tally ERP"],
-      responsibilities: [],
+      id: "3",
+      title: "Recruiter Team Lead – Hyderabad",
+      department: "Recruitment",
+      location: "Hyderabad – Ramanthapur",
+      type: "Full-time (On-site)",
+      experience: "2 to 5 years (Minimum 1 year in team handling)",
+      description:
+        "Hands-on Recruiter Junior Team Lead role in a fast-paced startup environment, responsible for team management and end-to-end recruitment.",
+      requirements: [
+        "2 to 5 years of experience in recruitment",
+        "Minimum 1 year experience in handling a recruitment team",
+        "Experience in bulk hiring or manpower recruitment",
+        "Ability to manage multiple hiring requirements simultaneously",
+        "Good understanding of sourcing platforms and screening methods",
+        "Background in staffing, consultancy, or manpower supply preferred",
+      ],
+      responsibilities: [
+        "Lead and manage a team of recruiters and interns",
+        "Assign daily hiring targets and monitor team performance",
+        "Handle end-to-end recruitment for key and critical roles",
+        "Plan and execute sourcing strategies for bulk and niche hiring",
+        "Track team productivity, submissions, interviews, and closures",
+        "Coordinate with clients and internal stakeholders on hiring requirements",
+        "Handle candidate and client escalations effectively",
+      ],
     },
-    // {
-    //   id: "3",
-    //   title: "Store Executive",
-    //   department: "Sales  & Marketing",
-    //   location: "Hyderabad",
-    //   type: "Full-time",
-    //   experience: "1–2 years",
-    //   description:
-    //     "Good communication skills, basic computer knowledge, and a background in sales.",
-    //   requirements: [
-    //     "Good communication skills",
-    //     "Basic computer knowledge",
-    //     "Background in sales",
-    //   ],
-    //   responsibilities: [],
-    // },
-    // {
-    //   id: "4",
-    //   title: "Sales Executive",
-    //   department: "Sales  & Marketing",
-    //   location: "Visakhapatnam, Hyderabad, Rajahmundry",
-    //   type: "Full-time",
-    //   experience: "1–2 years in FMCG sales",
-    //   description: "Proven experience in field sales within the FMCG sector.",
-    //   requirements: ["Proven experience in field sales within the FMCG sector"],
-    //   responsibilities: [],
-    // },
     {
       id: "5",
       title: "Business Development Manager(freelancer)",
       department: "Facility Management ",
-      location: "Hyderabad, Bangalore, Chennai, Delhi ,Pune,Visakhapatnam,Tirupati",
+      location:
+        "Hyderabad, Bangalore, Chennai, Delhi ,Pune,Visakhapatnam,Tirupati",
       type: "Full-time",
       experience: "0–1 year",
       description:
@@ -159,39 +132,40 @@ Thank you for your interest in joining SDCMS!`;
       ],
     },
     {
-  id: "6",
-  title: "Trainer – Banking, BPO & Employability Skills",
-  department: "Skill Development (CSR Project)",
-  location: "Ramanthapur, Hyderabad",
-  type: "Full-time",
-  experience: "2–3 years",
-  description:
-    "We are looking for an experienced female trainer to lead sessions under our CSR Skill Development initiative. The trainer will be responsible for delivering high-quality training in Banking, BPO, and Employability Skills to students/candidates, ensuring they are industry-ready and capable of securing sustainable employment opportunities.",
-  requirements: [
-    "Graduate / Postgraduate in any discipline (Commerce, Management, or related field preferred).",
-    "Minimum 2–3 years of training experience in Banking, BPO, Soft Skills, or Employability Skills.",
-    "Excellent communication, presentation, and interpersonal skills.",
-    "Proficiency in English and local language.",
-    "Ability to handle diverse groups of learners and adapt training methods accordingly.",
-    "Passion for teaching and empowering youth through skill development."
-  ],
-  responsibilities: [
-    "Conduct classroom training sessions on Banking, BPO, Communication, and Employability Skills.",
-    "Develop and deliver engaging training modules, lesson plans, and assessments.",
-    "Focus on improving students’ spoken English, soft skills, interview skills, and professional etiquette.",
-    "Mentor and guide candidates to enhance confidence and workplace readiness.",
-    "Assess student progress, provide feedback, and prepare regular reports.",
-    "Ensure training is aligned with industry standards and CSR project objectives.",
-    "Coordinate with project coordinators and HR for smooth execution of training schedules.",
-    "Motivate learners to achieve career goals and support them in placement activities."
-  ],
-  preferredSkills: [
-    "Exposure to CSR/Skill Development/NSDC projects.",
-    "Knowledge of banking products, BPO processes, and customer service skills.",
-    "Basic computer literacy (MS Office, PPT, Email)."
-  ],
-  compensation: "As per company norms with additional benefits under CSR project guidelines."
-},
+      id: "6",
+      title: "Trainer – Banking, BPO & Employability Skills",
+      department: "Skill Development (CSR Project)",
+      location: "Ramanthapur, Hyderabad",
+      type: "Full-time",
+      experience: "2–3 years",
+      description:
+        "We are looking for an experienced female trainer to lead sessions under our CSR Skill Development initiative. The trainer will be responsible for delivering high-quality training in Banking, BPO, and Employability Skills to students/candidates, ensuring they are industry-ready and capable of securing sustainable employment opportunities.",
+      requirements: [
+        "Graduate / Postgraduate in any discipline (Commerce, Management, or related field preferred).",
+        "Minimum 2–3 years of training experience in Banking, BPO, Soft Skills, or Employability Skills.",
+        "Excellent communication, presentation, and interpersonal skills.",
+        "Proficiency in English and local language.",
+        "Ability to handle diverse groups of learners and adapt training methods accordingly.",
+        "Passion for teaching and empowering youth through skill development.",
+      ],
+      responsibilities: [
+        "Conduct classroom training sessions on Banking, BPO, Communication, and Employability Skills.",
+        "Develop and deliver engaging training modules, lesson plans, and assessments.",
+        "Focus on improving students’ spoken English, soft skills, interview skills, and professional etiquette.",
+        "Mentor and guide candidates to enhance confidence and workplace readiness.",
+        "Assess student progress, provide feedback, and prepare regular reports.",
+        "Ensure training is aligned with industry standards and CSR project objectives.",
+        "Coordinate with project coordinators and HR for smooth execution of training schedules.",
+        "Motivate learners to achieve career goals and support them in placement activities.",
+      ],
+      preferredSkills: [
+        "Exposure to CSR/Skill Development/NSDC projects.",
+        "Knowledge of banking products, BPO processes, and customer service skills.",
+        "Basic computer literacy (MS Office, PPT, Email).",
+      ],
+      compensation:
+        "As per company norms with additional benefits under CSR project guidelines.",
+    },
     {
       id: "7",
       title: "Business Development Executive (Field Sales)",
@@ -224,37 +198,18 @@ Thank you for your interest in joining SDCMS!`;
   ];
 
   const internships = [
-    // {
-    //   id: '1',
-    //   title: 'Junior Web & App Developer Intern',
-    //   duration: '6 months',
-    //   location: 'Guntur (On-site)',
-    //   description: 'Full-time, on-site internship providing real-world project exposure in website and mobile app development.',
-    //   requirements: [
-    //     'Final-year students or recent graduates in Computer Science, IT, or related disciplines',
-    //     'Portfolio or GitHub profile is a plus (not mandatory)',
-    //     'Knowledge of HTML, CSS, JavaScript, and frameworks like React or Flutter',
-    //     'Understanding of backend integrations using Firebase, PHP, or Node.js'
-    //   ]
-    // },
-    // {
-    //   id: '2',
-    //   title: 'E-Commerce Executive Intern',
-    //   duration: '6 months',
-    //   location: 'Guntur (On-site)',
-    //   description: 'Dynamic and detail-oriented role to support digital retail operations with practical experience in managing online listings, order processing, and customer service.',
-    //   requirements: [
-    //     'Graduate or final-year student in Commerce, Business, or related fields',
-    //     'Familiarity with e-commerce platforms is a plus',
-    //     'Basic knowledge of Excel and digital marketing tools desirable',
-    //     'Strong communication and organizational skills'
-    //   ]
-    // },
     {
       id: "3",
       title: "Recruiting Intern (HR)",
       duration: "6 months",
-      location: "Guntur (On-site)",
+      location: [
+        "Guntur,",
+        "Delhi, ",
+        "Mumbai, ",
+        "Bangalore, ",
+        "Chennai, ",
+        "Noida, ",
+      ],
       description:
         "Support the Human Resources team in end-to-end recruitment with valuable exposure to HR operations, hiring workflows, and talent acquisition strategies.",
       requirements: [
@@ -264,20 +219,6 @@ Thank you for your interest in joining SDCMS!`;
         "Attention to detail and ability to maintain candidate databases",
       ],
     },
-    // {
-    //   id: "4",
-    //   title: "Tender Executive Intern",
-    //   duration: "6 months",
-    //   location: "Guntur (On-site)",
-    //   description:
-    //     "Proactive role to assist in identifying and preparing bids for government and private sector tenders, learning about procurement processes and documentation.",
-    //   requirements: [
-    //     "Students or graduates in Business Administration, Commerce, or relevant fields",
-    //     "Basic understanding of government procurement/tendering process preferred (not mandatory)",
-    //     "Strong attention to detail and MS Office skills",
-    //     "Ability to coordinate with cross-functional teams",
-    //   ],
-    // },
   ];
 
   const benefits = [
@@ -319,13 +260,28 @@ Thank you for your interest in joining SDCMS!`;
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Explore jobs at SDCMS in staffing, housekeeping, HR and facility
-                management. Find career opportunities in Guntur, Andhra Pradesh and
-                across South India.
+                management. Find career opportunities in Guntur, Andhra Pradesh
+                and across South India.
               </p>
               <div className="mt-2 text-sm">
-                <a href="/services" className="text-primary font-medium hover:underline underline-offset-4 mr-4">see what we deliver to clients</a>
-                <a href="/about" className="text-primary font-medium hover:underline underline-offset-4 mr-4">our culture and growth</a>
-                <a href="/contact" className="text-primary font-medium hover:underline underline-offset-4">speak to our recruitment team</a>
+                <a
+                  href="/services"
+                  className="text-primary font-medium hover:underline underline-offset-4 mr-4"
+                >
+                  see what we deliver to clients
+                </a>
+                <a
+                  href="/about"
+                  className="text-primary font-medium hover:underline underline-offset-4 mr-4"
+                >
+                  our culture and growth
+                </a>
+                <a
+                  href="/contact"
+                  className="text-primary font-medium hover:underline underline-offset-4"
+                >
+                  speak to our recruitment team
+                </a>
               </div>
             </div>
           </div>
@@ -600,8 +556,8 @@ Thank you for your interest in joining SDCMS!`;
                   Apply Now
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Ready to join our team? Submit your application and let's
-                  start a conversation about your future with us.
+                  Ready to join our team? Submit your application and start a
+                  conversation about your future with us.
                 </p>
               </div>
             </div>
@@ -614,11 +570,11 @@ Thank you for your interest in joining SDCMS!`;
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
                       </label>
-                      <Input 
+                      <Input
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Enter your full name" 
+                        placeholder="Enter your full name"
                         required
                       />
                     </div>
@@ -626,12 +582,12 @@ Thank you for your interest in joining SDCMS!`;
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email Address *
                       </label>
-                      <Input 
+                      <Input
                         name="email"
-                        type="email" 
+                        type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="Enter your email" 
+                        placeholder="Enter your email"
                         required
                       />
                     </div>
@@ -642,12 +598,12 @@ Thank you for your interest in joining SDCMS!`;
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number *
                       </label>
-                      <Input 
+                      <Input
                         name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="Enter your phone number" 
+                        placeholder="Enter your phone number"
                         required
                       />
                     </div>
@@ -655,11 +611,11 @@ Thank you for your interest in joining SDCMS!`;
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Position Applied For *
                       </label>
-                      <Input 
+                      <Input
                         name="position"
                         value={formData.position}
                         onChange={handleInputChange}
-                        placeholder="Enter position title" 
+                        placeholder="Enter position title"
                         required
                       />
                     </div>
