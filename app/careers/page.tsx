@@ -195,6 +195,36 @@ Thank you for your interest in joining SDCMS!`;
         weeklyOff: "Sunday fixed off",
       },
     },
+    {
+      id: "7",
+      title: "Relationship Officer (Housing Loan / MSME)",
+      department: "BFSI",
+      type: "Full-time",
+      experience: "2-3 years",
+      salary: "₹168,423.68 - ₹400,000.00 per year",
+      description:
+        "Responsible for quality customer acquisition as per the product bouquet of the business. Ensure adherence to bank processes and policies while maintaining strong banking relationships with customers in coordination with relevant teams.",
+      responsibilities: [
+        "Source loan clients in line with business plan and targets",
+        "Maintain strict credit discipline and ensure zero default in recovery",
+        "Monitor loan portfolio including utilization checks and regular monitoring visits",
+        "Ensure compliance with policies, procedures, and practices and contribute to process improvement",
+        "Maintain accurate and timely records and reporting",
+        "Understand customer needs and respond to queries to ensure satisfaction",
+        "Complete loan contracts by explaining provisions, obtaining signatures, notarization, and collecting fees",
+        "Perform any other work assigned from time to time",
+      ],
+      requirements: [
+        "Graduate in any discipline",
+        "2-3 years of relevant experience in BFSI domain",
+        "RO-Housing Loan: Minimum 1 year experience in Housing Loan, Mortgage Loan, or Secured Loan (DST model)",
+        "Must handle direct market sourcing and understand HL documentation and sourcing mechanism",
+        "Exposure to Affordable Housing Loan is mandatory",
+        "RO-MSME: Minimum 1 year experience in MSME / LAP Business Loan or Secured Loan (DST model)",
+        "Must handle direct market sourcing and understand MSME / LAP documentation and sourcing mechanism",
+        "Exposure to Affordable MSME / Affordable LAP is mandatory",
+      ],
+    },
   ];
 
   const internships = [
