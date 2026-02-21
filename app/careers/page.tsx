@@ -110,7 +110,7 @@ Thank you for your interest in joining SDCMS!`;
       location:
         "Hyderabad, Bangalore, Chennai, Delhi ,Pune,Visakhapatnam,Tirupati",
       type: "Full-time",
-      experience: "0–1 year",
+      experience: "2–3 year",
       description:
         "The Business Development Manager is responsible for driving business growth for the Facility Management division by generating new clients and maintaining strong relationships. The role focuses on understanding client requirements for housekeeping and security manpower, preparing quotations, and finalizing service contracts.",
       requirements: [
