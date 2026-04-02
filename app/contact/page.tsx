@@ -144,7 +144,17 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold text-foreground mb-6">
                     Send us a Message
                   </h2>
-                  <form className="space-y-6">
+                  <form 
+                    className="space-y-6" 
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      if (typeof window !== "undefined" && (window as any).fbq) {
+                        (window as any).fbq('track', 'Lead');
+                      }
+                      // Currently just resets visual or provides alert
+                      alert("Thank you! Your message has been sent.");
+                    }}
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">

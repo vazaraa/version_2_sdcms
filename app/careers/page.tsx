@@ -38,6 +38,11 @@ export default function CareersPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Track job apply event
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq('track', 'CompleteRegistration');
+    }
+
     // Format the message for WhatsApp with all filled fields
     const message = `*Job Application - SDCMS*
 
@@ -336,6 +341,11 @@ Thank you for your interest in joining SDCMS!`;
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-600 transition duration-300"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).fbq) {
+                (window as any).fbq('track', 'Contact');
+              }
+            }}
           >
             💬 WhatsApp HR
           </a>
@@ -451,6 +461,11 @@ Thank you for your interest in joining SDCMS!`;
                         href="https://wa.me/919985624111"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof window !== "undefined" && (window as any).fbq) {
+                            (window as any).fbq('track', 'Contact');
+                          }
+                        }}
                       >
                         Apply Now
                       </a>
